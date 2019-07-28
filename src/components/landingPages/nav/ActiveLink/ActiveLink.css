@@ -1,3 +1,20 @@
+.link {
+    display: inline;
+}
+
 .link--active {
     text-shadow: 2px 2px lightgray;
 }
+
+.link:link, .link:visited, .link:hover, .link:active, .link:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link__external-icon {
+    max-width: 1em;
+    padding-left: 0.25em;
+    padding-bottom: 0.2em;
+    vertical-align: middle;
+}
+

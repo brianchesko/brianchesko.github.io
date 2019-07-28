@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './nav/NavBar';
 import NavBarItem from './nav/NavBarItem';
-import logo from '../../logo.svg';
+// import logo from '../../logo.svg';
 
 export default function(props) {
     return (
