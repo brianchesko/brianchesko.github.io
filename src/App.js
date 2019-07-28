@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LandingHome from './components/landingPages/LandingHome/LandingHome';
+import LandingResume from './components/landingPages/LandingResume/LandingResume';
+import { Locations, Location, NotFound } from 'react-router-component';
+import LandingNotFound from './components/landingPages/LandingNotFound/LandingNotFound';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Locations>
+        <Location path='/' handler={LandingHome} />
+        <Location path='/resume' handler={LandingResume} />
+        <NotFound handler={LandingNotFound} />
+      </Locations>
     </div>
   );
 }

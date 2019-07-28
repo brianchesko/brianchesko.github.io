@@ -1,0 +1,18 @@
+
+.nav-bar {
+    margin-left: 0;
+    display: inline-block;
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.nav-bar__item {
+    display: inline;
+    padding: 20px;
+}
+
+.nav-bar__item a:link, .nav-bar__item a:visited, .nav-bar__item a:hover, .nav-bar__item a:active, .nav-bar__item a:focus {
+    text-decoration: none;
+    color: inherit;
+}
