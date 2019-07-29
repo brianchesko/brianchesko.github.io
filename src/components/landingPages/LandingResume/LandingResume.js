@@ -1,12 +1,12 @@
 import React from 'react';
 import Landing from '../Landing';
 
-export default function(props) {
-    return (
-        <Landing>
-            <h2>
-                Temporary resume landing
-            </h2>
-        </Landing>
-    )
+export default function (props) {
+  return (
+    <Landing heading='Resume'>
+      <h3>
+        Page content here. WIP!
+      </h3>
+    </Landing>
+  )
 }

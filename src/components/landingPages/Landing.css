@@ -1,0 +1,9 @@
+
+.landing__header {
+  background-color: var(--accent-color);
+  padding: 2vmin 2rem;
+}
+
+.landing__content {
+  background-color: white;
+}

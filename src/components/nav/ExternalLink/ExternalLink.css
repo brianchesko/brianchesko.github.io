@@ -1,0 +1,16 @@
+.link {
+  display: inline;
+}
+
+.link__external-icon {
+  max-width: 1em;
+  padding-left: 0.25em;
+  padding-bottom: 0.2em;
+  vertical-align: middle;
+}
+
+.link:link, .link:visited, .link:hover, .link:active, .link:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}

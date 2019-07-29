@@ -1,27 +1,19 @@
 import React from 'react';
-import NavBar from './nav/NavBar';
-import NavBarItem from './nav/NavBarItem';
-// import logo from '../../logo.svg';
+import './Landing.css';
 
 export default function(props) {
-    return (
-        <div className='landing'>
-            <NavBar>
-                <NavBarItem value="Home" href="/"/>
-                <NavBarItem value="Resume" href="/resume"/>
-                <NavBarItem external value="GitHub" href="https://github.com/brianchesko" />
-                <NavBarItem external value="LinkedIn" href="https://www.linkedin.com/in/brian-chesko-3b503a152/" />
-            </NavBar>
-            <article className='landing__content'>
-                {/* <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                </header> */}
-                {props.children}
-            </article>
-        </div>
-
-    );
+  return (
+    <div className='landing'>
+      <article className='landing__content'>
+        {props.heading &&
+          <header className='landing__header'>
+            <h2 className='landing__header__content'>
+              {props.heading}
+            </h2>
+          </header>
+        }
+        {props.children}
+      </article>
+    </div>
+  );
 }
