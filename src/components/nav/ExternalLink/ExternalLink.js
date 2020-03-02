@@ -6,11 +6,13 @@ export default function(props) {
   return (
     <a href={props.to} className='link'>
       {props.children}
-      <img
-        className='link__external-icon'
-        alt='External link'
-        src={ExternalLinkIcon}
-      />
+      {props.noIcon || 
+        <img
+          className='link__external-icon'
+          alt='External link'
+          src={ExternalLinkIcon}
+        />
+      }
     </a>
   );
   

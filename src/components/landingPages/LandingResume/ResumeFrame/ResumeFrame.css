@@ -4,3 +4,15 @@
     width: 60%;
     height: 80vh;
 }
+
+.inline-link {
+    padding: 0 0.2em;
+}
+
+.inline-link__bold {
+    font-weight: var(--heavy-font-weight);
+}
+
+.inline-link__italic {
+    font-style: italic;
+}
