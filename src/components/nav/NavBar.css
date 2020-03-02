@@ -1,3 +1,9 @@
+/* TODO: rework nav bar to be more aesthetic. ideas:
+    larger text that shrinks with the nav bar on scroll;
+    revert scroll bar to top-level element, ignore scroll bar for
+    flex box width calculations (100vh?);
+    big name in left of nav bar and pages on right */
+
 .nav-bar {
   margin-left: 0;
   display: flex;

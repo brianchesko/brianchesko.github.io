@@ -1,6 +1,22 @@
 
+body {
+  /* keep navbar width the same regardless of scrollbar */
+  overflow: hidden; 
+  margin: 0;
+  padding: 0;
+}
+
 .app {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
   text-align: center;
   background-color: var(--main-color);
-  height: 100%;
+  width: 100%;
+}
+
+.scroll-wrapper {
+  overflow-y: auto;
 }

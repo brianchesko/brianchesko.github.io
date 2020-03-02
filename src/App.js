@@ -17,11 +17,13 @@ function App() {
           <NavBarItem external value="GitHub" to="https://github.com/brianchesko" key="github" />
           <NavBarItem external value="LinkedIn" to="https://www.linkedin.com/in/brian-chesko-3b503a152/" key="linkedin"/>
         </NavBar>
-        <Switch>
-          <Route path='/' exact component={LandingHome} />
-          <Route path='/resume' component={LandingResume} />
-          <Route component={LandingNotFound} />
-        </Switch>
+        <div className="scroll-wrapper">
+          <Switch>
+            <Route path='/' exact component={LandingHome} />
+            <Route path='/resume' component={LandingResume} />
+            <Route component={LandingNotFound} />
+          </Switch>
+        </div>
       </Router>
     </div>
   );
