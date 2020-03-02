@@ -1,7 +1,7 @@
 {
   "name": "personal-site",
   "version": "0.1.0",
-  "homepage": "http://brianchesko.github.io",
+  "homepage": "https://brianchesko.github.io",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.2.0",
