@@ -1,0 +1,76 @@
+
+.carousel__portfolio {
+  display: block;
+  --dot-diameter: 20px;
+  --dot-offset: calc(-1 * calc(var(--dot-diameter) / 2));
+  --dot-group-height: calc(var(--dot-diameter) / 4);
+  --raised-group-offset: calc(var(--dot-group-height) / -4);
+  position: relative;
+  width: 20%;
+  margin: 0em auto;
+}
+
+.traversal-button {
+  position: absolute;
+  width: var(--dot-diameter);
+  height: var(--dot-diameter);
+  padding: 0;
+
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 50%;
+  border: 2px solid lightgray;
+  
+  margin-top: calc(var(--dot-offset)); /* center on border */
+  top: 50%; /* offset vertically */
+}
+
+.traversal-button__back {
+  margin-left: var(--dot-offset); /* center on border */
+  left: var(--dot-diameter); /* offset horizontally */
+}
+
+.traversal-button__next {
+  margin-right: var(--dot-offset); /* center on border */
+  right: var(--dot-diameter); /* offset horizontally */
+}
+
+.carousel__dot-group {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  margin-top: calc(0px - calc(var(--dot-group-height) / 2));
+  bottom: var(--dot-group-height);
+}
+
+.carousel__dot {
+  border-radius: 20%;
+  background-color: white;
+  border: 1px solid lightgray;
+  opacity: 0.8;
+  width: calc(1.2 * var(--dot-diameter));
+  height: var(--dot-group-height);
+  margin: 0 calc(var(--dot-group-height) / 2.5);
+
+  animation-name: lower-button;
+  animation-duration: 0.25s;
+}
+
+.carousel__dot--selected {
+  margin-top: var(--raised-group-offset);
+
+  animation-name: raise-button;
+  animation-duration: 0.5s;
+}
+
+@keyframes lower-button {
+  from {margin-top: var(--raised-group-offset);}
+  to {margin-top: 0;}
+}
+
+
+@keyframes raise-button {
+  from {margin-top: 0;}
+  to {margin-top: var(--raised-group-offset);}
+}

@@ -4,10 +4,11 @@ import NavBar from './components/nav/NavBar';
 import NavBarItem from './components/nav/NavBarItem';
 import LandingHome from './components/landingPages/LandingHome/LandingHome';
 import LandingResume from './components/landingPages/LandingResume/LandingResume';
+import LandingNotFound from './components/landingPages/LandingNotFound/LandingNotFound';
+import LandingPortfolio from './components/landingPages/LandingPortfolio/LandingPortfolio';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { findDOMNode } from 'react-dom';
-import LandingNotFound from './components/landingPages/LandingNotFound/LandingNotFound';
 
 /*
  * Credit to
@@ -38,6 +39,7 @@ function App() {
         <NavBar>
           <NavBarItem value="Home" to="/" key="home" />
           <NavBarItem value="Resume" to="/resume" key="resume" />
+          <NavBarItem value="Portfolio" to="/portfolio" key="portfolio" />
           <NavBarItem external value="GitHub" to="https://github.com/brianchesko" key="github" />
           <NavBarItem external value="LinkedIn" to="https://www.linkedin.com/in/brian-chesko-3b503a152/" key="linkedin"/>
         </NavBar>
@@ -45,6 +47,7 @@ function App() {
           <Switch>
             <Route path='/' exact component={LandingHome} />
             <Route path='/resume' component={LandingResume} />
+            <Route path='/portfolio' component={LandingPortfolio} />
             <Route component={LandingNotFound} />
           </Switch>
         </Scroll>

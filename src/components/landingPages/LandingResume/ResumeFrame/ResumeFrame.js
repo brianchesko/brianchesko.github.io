@@ -4,7 +4,6 @@ import './ResumeFrame.css';
 
 export default function (props) {
   const pdfLink = props.src;
-  console.log(pdfLink);
 
   return (
     <object className='resume-frame' data={pdfLink} type='application/pdf'>
