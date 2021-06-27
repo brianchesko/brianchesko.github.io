@@ -1,0 +1,34 @@
+{
+    "name": "personal-site",
+    "version": "0.1.0",
+    "homepage": "https://brianchesko.github.io",
+    "description": "Simple recipes for building and compiling with the CLI.",
+    "author": {
+        "name": "Brian Chesko",
+        "url": "https://brianchesko.github.io"
+    },
+    "license": "MIT",
+    "scripts": {
+        "clean": "recursive-delete 'dist'",
+        "js": "rollup --config",
+        "css": "node sass.js",
+        "copy": "recursive-copy src/copy dist",
+        "build-dirty": "npm-run-all -p js css copy",
+        "build": "npm-run-all -s clean build-dirty",
+        "watch-css": "chokidar './src/**/*.scss' -c 'npm run css'",
+        "watch-js": "chokidar './src/**/*.js' -c 'npm run js'",
+        "watch-copy": "chokidar './src/copy/**/*.*' -c 'npm run copy'",
+        "watch": "npm-run-all -p build watch-css watch-js watch-copy",
+        "server-start": "browser-sync start --files 'dist' --server 'dist'",
+        "server": "npm-run-all -p watch server-start"
+    },
+    "devDependencies": {
+        "npm-run-all": "^4.1.5",
+        "recursive-fs": "^2.1.0",
+        "rollup": "^2.6.1",
+        "rollup-plugin-terser": "^7.0.2",
+        "sass": "^1.26.5",
+        "chokidar-cli": "^2.1.0",
+        "browser-sync": "^2.26.14"
+    }
+}
