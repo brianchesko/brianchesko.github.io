@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Brian Chesko</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<h1>Brian Chesko Personal Page</h1>
+	<header>
+		<nav>
+			<ul class="nav_list">
+				<li class="nav_list-item">
+					<a class="nav_link nav_link__internal" href="#">Home</a>
+				</li>
+				<li class="nav_list-item">
+					<a class="nav_link nav_link__external" href="https://github.com/brianchesko">
+						GitHub
+					</a>
+				</li>
+				<li class="nav_list-item">
+					<a class="nav_link nav_link__internal" href="https://www.linkedin.com/in/brian-chesko/">
+						LinkedIn
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
-	<p>Anything you put in the <code>copy</code> directory gets copied as-is into the <code>dist</code> directory.</p>
+	<main>
+		<section id="banner_wrapper">
+			<h1 id="banner_heading">Brian Chesko</h1>
+		</section>
+		<section>
+			<p>Anything you put in the <code>copy</code> directory gets copied as-is into the <code>dist</code> directory.</p>
+			<p><button id="click-me">Click Me</button></p>
+		</section>
+		</article>
+	</main>
 
-	<p><button id="click-me">Click Me</button></p>
 
 	<!-- Scripts -->
 	<script src="js/detects.js"></script>
-	<script src="js/another-file.js"></script>
+	<script src="js/onload.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

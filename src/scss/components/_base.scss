@@ -3,10 +3,13 @@
  */
 
 body {
-	font-size: 125%;
+	width: 100%;
+	margin: 0;
+}
+
+section {
+    max-width: 88%;
 	margin: 0 auto;
-	max-width: 42em;
-	width: 88%;
 }
 
 input,

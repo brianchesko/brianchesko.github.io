@@ -6,7 +6,7 @@ import pkg from './package.json';
 // Configs
 var configs = {
 	name: 'brianCheskoWebpage',
-	files: ['main.js', 'detects.js', 'another-file.js'],
+	files: ['main.js', 'detects.js', 'onload.js'],
 	formats: ['iife', 'es', 'amd', 'cjs'],
 	default: 'iife',
 	pathIn: 'src/js',
