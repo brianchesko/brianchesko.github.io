@@ -108,11 +108,14 @@ section {
 }
 
 .resume-line {
-    display: flex;
-    justify-content: space-between;
     min-width: 400px;
     max-width: 800px;
     width: 80%;
+
+    &.degree-line {
+        display: flex;
+        justify-content: space-between;
+    }
 
     p {
         display: inline;
