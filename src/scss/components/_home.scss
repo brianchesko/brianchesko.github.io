@@ -11,12 +11,32 @@
     }
 
     &_link {
-        &__external {
-            background-color: blue;
+        text-decoration: none;
+        font-weight: 300;
+        color: var(--primary);
+
+        &:active {
+            color: var(--primary);
         }
 
-        &__internal {
-            background-color: green;
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &__external {
+            --offset: 2px;
+            display: flex;
+            align-items: center;
+            display: inline-block;
+            img.ext-icon {
+                position: relative;
+                height: 1rem;
+                transform: translateY(var(--offset));
+                padding-top: var(--offset);
+                // cheeky filter from StackOverflow to set color on an img SVG
+                // https://codepen.io/sosuke/pen/Pjoqqp
+                filter: invert(100%) sepia(0%) saturate(7463%) hue-rotate(215deg) brightness(109%) contrast(110%);
+            }
         }
     }
 }
@@ -25,11 +45,27 @@
     &_wrapper {
         width: 100%;
         max-width: 100%;
-        transition: background-color 1.25s ease;
-        background-color: white;
+        position: relative;
+        // background-color: var(--deep-accent);
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.25s ease-in;
+            overflow: hidden;
+            background-image: url('./../img/crab.jpg');
+        }
 
         &.active {
-            background-color: black;
+            &:before {
+                opacity: 0.6;
+            }
         }
     }
 
@@ -37,6 +73,7 @@
         font-size: 4em;
         margin: 0 0 0 1em;
         padding: 2em 0;
-        color: white;
+        color: var(--highlight);
+        font-weight: 300;
     }
 }

@@ -1,10 +1,28 @@
 /**
  * @section Base Styles
  */
+ $primary: #bec1c7;
+ $highlight: #ebedf0;
+ $accent: #2b2921;
+ $deep-accent: #1b1a15;
+
+ $primary-font-face: 'Roboto', sans-serif;
+ 
+ :root {
+   --primary: #{$primary};
+   --highlight: #{$highlight};
+   --deep-accent: #{$deep-accent};
+   --accent: #{$accent};
+   --primary-font-face: #{$primary-font-face};
+
+   color: var(--primary);
+   font-family: var(--primary-font-face);
+}
 
 body {
 	width: 100%;
 	margin: 0;
+	background-color: var(--accent);
 }
 
 section {
@@ -18,3 +36,4 @@ select,
 button {
 	font: inherit;
 }
+
