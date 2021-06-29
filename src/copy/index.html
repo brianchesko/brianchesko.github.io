@@ -10,7 +10,8 @@
 </head>
 <body>
 	<header>
-		<nav>
+		<nav id="nav_wrapper">
+			<a id="nav_logo" href="/" class="nav_link nav_link__internal">BC</a>
 			<ul class="nav_list">
 				<li class="nav_list-item">
 					<a class="nav_link nav_link__internal" href="#">Home</a>
@@ -36,10 +37,30 @@
 			<h1 id="banner_heading">Brian Chesko</h1>
 		</section>
 
+		<section id="toc_wrapper" class="main-content">
+			<div id="toc_box">
+				<h2 id="toc_descriptor">Jump to section</h2>
+				<ol id="toc_top-list" class="toc_list">
+					<li class="toc_list-item"><a href="#about-me">About me</a></li>
+					<li class="toc_list-item"><a href="#resume">Resume</a></li>
+					<ul class="toc_list">
+						<li class="toc_list-item"><a href="#education">Education</a></li>
+						<ul class="toc_list">
+							<li class="toc_list-item"><a href="#coursework">Coursework</a></li>
+							<li class="toc_list-item"><a href="#honors">Honors & awards</a></li>
+						</ul>
+						<li class="toc_list-item"><a href="#internships">Internship experiences</a></li>
+						<li class="toc_list-item"><a href="#work">Work experiences</a></li>
+					</ul>
+					<li class="toc_list-item"><a href="#portfolio">Portfolio</a></li>
+				</ol>
+			</div>
+		</section>
+
 		<section id="about-me-wrapper" class="main-content">
 			<h1 id="about-me">
 				<a href="#about-me" class="heading-link link__internal">
-					About Me
+					About me
 				</a>
 			</h1>
 			<p>uwu</p>
@@ -52,7 +73,7 @@
 						Resume
 					</a>
 				</h1>
-				<button id="resume-header_download-button">Download as PDF</button>
+				<button id="resume-header_download-button" type="button">Download as PDF</button>
 			</div>
 
 			<div class="resume_section" id="education">
@@ -73,12 +94,43 @@
 					</div>
 				</div>
 	
-				<div>
-					<h4>Coursework</h4>
+				<div id="honors">
+					<h4>Honors + awards</h4>
 					<ul>
+						<li>aaa</li>
+					</ul>
+				</div>
+	
+				<div id="coursework">
+					<h4>Coursework <button id="coursework_show-btn">show</button></h4>
+					<ul id="coursework_list">
+						<p class="coursework_subject">Engineering</p>
+						<li>Thermal-Fluid Sciences I, II</li>
+						<li>Quality & Reliability in Engineering</li>
+						<li>Machine Design</li>
+						<li>Strength of Materials</li>
+						<li>Statics/Dynamics</li>
+						<li>Introduction to Nanotechnology</li>
+						<li>System Dynamics and Controls</li>
+						<li>Finite Element Analysis</li>
 						<li>Introduction to Aerospace Propulsion</li>
-						<li>Calculus III</li>
+						<li>Introduction to Mechanical Vibrations</li>
+						<li>Introduction to Flight Dynamics</li>
+						<p class="coursework_subject">Computer Science</p>
 						<li>Data Structures & Algorithms</li>
+						<li>Design and Analysis of Algorithms</li>
+						<li>Computer Vision</li>
+						<li>Computer Organization</li>
+						<li>Operating Systems</li>
+						<li>Introduction to Machine Learning</li>
+						<li>Databases Systems</li>
+						<li>Advanced Android Programming</li>
+						<li>Software Engineering</li>
+						<p class="coursework_subject">Mathematics</p>
+						<li>Calculus III</li>
+						<li>Ordinary Differential Equations</li>
+						<li>Linear Algebra</li>
+						<li>Probability and Random Variables</li>
 					</ul>
 				</div>
 			</div>
@@ -86,14 +138,38 @@
 			<div class="resume_section" id="internships">
 				<h2>
 					<a href="#internships" class="heading-link link__internal">
-						Internship Experiences
+						Internship experiences
 					</a>
 				</h2>
+
 				<div class="resume-line">
 					<div class="resume-line_title">
 						<h3>NASA Engineering Intern</h3>
-						<h4>NASA Glenn Research Center</h4>
-						<h4>June 2020 - Aug. 2020</h4>
+						<h4>NASA Glenn Research Center, Cleveland, OH</h4>
+						<h4>June 2020 – Aug. 2020</h4>
+					</div>
+					<div class="resume-line_description">
+						<p>temp</p>
+						<p>temp 2</p>
+					</div>
+				</div>
+				
+				<div class="resume-line">
+					<div class="resume-line_title">
+						<h3>Software Engineering Intern</h3>
+						<h4>Clover Network, New York, NY</h4>
+						<h4>May 2019 – Aug 2019</h4>
+					</div>
+					<div class="resume-line_description">
+						<p>temp</p>
+					</div>
+				</div>
+				
+				<div class="resume-line">
+					<div class="resume-line_title">
+						<h3>Software Engineering Intern</h3>
+						<h4>Clover Network, New York, NY</h4>
+						<h4>July 2018 – September 2018</h4>
 					</div>
 					<div class="resume-line_description">
 						<p>temp</p>
@@ -105,14 +181,25 @@
 			<div class="resume_section" id="work">
 				<h2>
 					<a href="#work" class="heading-link link__internal">
-						Work Experiences
+						Work experiences
 					</a>
 				</h2>
 				<div class="resume-line">
 					<div class="resume-line_title">
 						<h3>Learning Assistant and Tutor</h3>
 						<h4>Rowan University Computer Science Department</h4>
-						<h4>Jan. 2018 - May. 2021</h4>
+						<h4>Jan. 2018 – May 2021</h4>
+					</div>
+					<div class="resume-line_description">
+						<p>temp</p>
+						<p>temp 2</p>
+					</div>
+				</div>
+				<div class="resume-line">
+					<div class="resume-line_title">
+						<h3>Shift Lead and Counter Service</h3>
+						<h4>Dunkin' Donuts</h4>
+						<h4>May 2015 – Jan. 2018</h4>
 					</div>
 					<div class="resume-line_description">
 						<p>temp</p>
@@ -122,10 +209,10 @@
 			</div>
 		</section>
 		
-		<section id="projects" class="main-content">
+		<section id="portfolio" class="main-content">
 			<h1>
-				<a href="#projects" class="heading-link link__internal">
-					Projects [WIP]
+				<a href="#portfolio" class="heading-link link__internal">
+					Portfolio [WIP]
 				</a>
 			</h1>
 		</section>

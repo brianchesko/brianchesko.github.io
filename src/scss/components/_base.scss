@@ -3,14 +3,16 @@
  */
 $primary: #bec1c7;
 $highlight: #ebedf0;
-$accent: #2b2921;
-$deep-accent: #1b1a15;
+$light-accent: #484749;
+$accent: #2f2e30;
+$deep-accent: #232224;
 
 $primary-font-face: 'Roboto', sans-serif;
  
 :root {
     --primary: #{$primary};
     --highlight: #{$highlight};
+    --light-accent: #{$light-accent};
     --deep-accent: #{$deep-accent};
     --accent: #{$accent};
     --primary-font-face: #{$primary-font-face};
