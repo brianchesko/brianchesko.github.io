@@ -14,49 +14,57 @@
                     "type": "image",
                     "src": "/img/crab.jpg"
                 }
-            ]
+            ],
+            "skills": ["Mechanical design", "SolidWorks", "Machining"]
         },
         {
             "id": "snake-rl",
             "name": "Deep-Q Reinforcement Learning towards Playing Snake",
             "date": "Fall 2019",
-            "description": "Developed a multithreaded, highly configurable Python implementation of Snake from scratch\nCreated and trained a Deep Q-Network reinforcement learning agent to play game using Keras-RL, TensorFlow and OpenAI Gym with near human-level accuracy"
+            "description": "Developed a multithreaded, highly configurable Python implementation of Snake from scratch\nCreated and trained a Deep Q-Network reinforcement learning agent to play game using Keras-RL, TensorFlow and OpenAI Gym with near human-level accuracy",
+            "skills": ["Machine learning", "Reinforcement learning", "Python", "Keras-RL"]
         },
         {
             "id": "car-body-cfd",
             "name": "SolidWorks Flow Sim Car Body CFD Optimization",
             "date": "Spring 2020",
-            "description": "Designed the exterior of a model car to maximize downforce and minimize aerodynamic drag\nRan studies using the SolidWorks Flow Simulation toolbox to quantify effects of modifications\nIncorporated components such as wings, vortex generators, and geometries based on fluid flow theory to achieve a lift-to-drag ratio of -3.5"
+            "description": "Designed the exterior of a model car to maximize downforce and minimize aerodynamic drag\nRan studies using the SolidWorks Flow Simulation toolbox to quantify effects of modifications\nIncorporated components such as wings, vortex generators, and geometries based on fluid flow theory to achieve a lift-to-drag ratio of -3.5",
+            "skills": ["SolidWorks", "CFD", "Flow visualization"]
         },
         {
             "id": "snakey-bakey",
             "name": "Soft Robotic Snake for RoboSoft Competition",
             "date": "Spring 2021",
-            "description": "Worked in a team of students across various engineering disciplines to develop a robotic snake capable of traversing an obstacle course including multiple terrains and conditions\nUtilized modular design consisting of segments interconnected by motor-actuated wires which propagate contraction and tension of wires to compress springs to create motion"
+            "description": "Worked in a team of students across various engineering disciplines to develop a robotic snake capable of traversing an obstacle course including multiple terrains and conditions\nUtilized modular design consisting of segments interconnected by motor-actuated wires which propagate contraction and tension of wires to compress springs to create motion",
+            "skills": ["Arduino", "Mechanical design"]
         },
         {
             "id": "differential-gearbox",
             "name": "3D Printed and Machined Differential Gearbox",
             "date": "Fall 2019",
-            "description": "Utilized SolidWorks to model a differential required to handle two inputs of 1000 RPM and produce an output of 500 RPM\nConstructed the design out of 3D-printed bevel and spur gears and a machined aluminum housing\nPerformed static and fatigue analysis of the parts using SolidWorks to determine the failure conditions and factor of safety of the design"
+            "description": "Utilized SolidWorks to model a differential required to handle two inputs of 1000 RPM and produce an output of 500 RPM\nConstructed the design out of 3D-printed bevel and spur gears and a machined aluminum housing\nPerformed static and fatigue analysis of the parts using SolidWorks to determine the failure conditions and factor of safety of the design",
+            "skills": ["SolidWorks", "3d printing", "Machining", "Failure analysis"]
         },
         {
             "id": "ball-and-beam",
             "name": "Modeling and Control of Ball and Beam System",
             "date": "Fall 2020 – Spring 2021",
-            "description": "Modeled an implementation of a ball-and-beam system with 14” track using SolidWorks upon which a ball can roll lengthwise with desired equilibrium ball position input fed via Arduino\nComputed governing equations using dynamics analysis\nImplemented and tuned PID control system within MATLAB Simulink according to minimize response time and overshoot\nPlotted theoretical ball position versus time for desired ball position inputs"
+            "description": "Modeled an implementation of a ball-and-beam system with 14” track using SolidWorks upon which a ball can roll lengthwise with desired equilibrium ball position input fed via Arduino\nComputed governing equations using dynamics analysis\nImplemented and tuned PID control system within MATLAB Simulink according to minimize response time and overshoot\nPlotted theoretical ball position versus time for desired ball position inputs",
+            "skills": ["Control systems", "MATLAB", "Simulink", "SolidWorks"]
         },
         {
             "id": "beachworm-music",
             "name": "BeachWorm Music Recommendation Web App",
             "date": "Spring 2021",
-            "description": "Developed a responsive web application designed to offer music playback and recommendations based on a like-and-dislike system with features such as playlist creation and customization\nImplemented back-end RESTful API using a stack based on the Django Python framework with a SQLite database and front-end with React and Material UI, utilizing the Spotify Web Playback SDK for in-browser persistent song playback across pages\nFollowed standard software development practices such as creation of wireframes and design documentation across development phases"
+            "description": "Developed a responsive web application designed to offer music playback and recommendations based on a like-and-dislike system with features such as playlist creation and customization\nImplemented back-end RESTful API using a stack based on the Django Python framework with a SQLite database and front-end with React and Material UI, utilizing the Spotify Web Playback SDK for in-browser persistent song playback across pages\nFollowed standard software development practices such as creation of wireframes and design documentation across development phases",
+            "skills": ["React", "JavaScript", "Python", "Django", "REST"]
         },
         {
             "id": "personal-webpage",
             "name": "Personal Webpage",
             "date": "Spring 2021",
-            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and toggling elements using JavaScript. Specific resume line items are loaded in via a JSON file that may be hot-swapped at any time just by editing an item."
+            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and toggling elements using JavaScript. Specific resume line items are loaded in via a JSON file that may be hot-swapped at any time just by editing an item.",
+            "skills": ["HTML", "CSS", "JavaScript", "Design"]
         }
     ],
     "internships": [

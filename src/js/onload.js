@@ -5,7 +5,7 @@ const bannerImageElements = [
     document.getElementById('banner_image1'), document.getElementById('banner_image2')
 ]
 const bannerImageDir = './img/';
-const bannerImages = ["crab.jpg", "moon.jpg", "ocean.jpg"];
+const bannerImages = ["crab.jpg", "moon.jpg", "ocean.jpg"]; // TODO: get actual images
 
 if (bannerWrapper) {
     // throw this on with js to ensure page has fully loaded
@@ -66,8 +66,6 @@ const populateProjects = (projects) => {
                         arrow.classList.add('portfolio_project-expand-collapse-arrow__hidden');
                     }
                 });
-
-                // const dropdownArrow = allDropdowns.filter(x => x.parentElement.parentElement == event.currentTarget)[0];
 
                 // TODO: consider the following -- what if instead of adding the description/multimedia at element creation time,
                 // we just create them here on expand and destroy them after collapse (or just not create them again)? not sure
@@ -159,7 +157,7 @@ const populateProjects = (projects) => {
         }
         */
 
-        // TODO: add collapse/expand arrow at top right
+        // TODO: add relevant technologies to bottom of each project, add in from json
 
         // add to top-level
         allProjectsWrapper.appendChild(wrapper);
