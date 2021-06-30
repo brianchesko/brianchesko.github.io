@@ -25,7 +25,9 @@
         "watch-copy": "chokidar \"./src/copy/**/*.*\" -c \"npm run copy\"",
         "watch": "npm-run-all -p build watch-css watch-js watch-img watch-svg watch-copy",
         "server-start": "browser-sync start --files \"dist\" --server \"dist\"",
-        "server": "npm-run-all -p watch server-start"
+        "server": "npm-run-all -p watch server-start",
+        "deploy-current": ".\\deploy.sh", 
+        "deploy": "npm-run-all -s build deploy-current"
     },
     "devDependencies": {
         "npm-run-all": "^4.1.5",
