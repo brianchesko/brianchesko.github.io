@@ -64,6 +64,7 @@
         width: 100%;
         max-width: 100%;
         position: relative;
+        margin-top: 0;
 
         // after element hides the image gallery and then reveals it after page load via transition
         &:after {
@@ -208,6 +209,14 @@ section {
         margin-left: 1rem;
         height: 1.5rem;
         font-size: 1rem;
+    }
+
+    &_download-anchor {
+        text-decoration: none;
+        color: var(--light-accent);
+        &:visited, &:active {
+            text-decoration: none;
+        }
     }
 }
 
