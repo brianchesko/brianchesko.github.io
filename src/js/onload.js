@@ -55,7 +55,7 @@ const populateProjects = (projects) => {
             if (projectId && project && !targetClasses.includes('portfolio_project-wrapper__expanded')) {
                 console.log(`Expanding ${projectId}`);
                 event.stopPropagation();
-                
+
                 event.currentTarget.classList.add('portfolio_project-wrapper__expanded');
 
                 const allDropdowns = Array.from(
@@ -139,13 +139,18 @@ const populateProjects = (projects) => {
 
         const header = document.createElement('h3');
         header.classList.add('portfolio_project-heading');
-        header.innerText = proj.name;
+
+        const headerText = document.createElement('span');
+        headerText.classList.add('portfolio_project-heading-text');
+        headerText.innerText = proj.name;
 
         const dropdownArrow = document.createElement('img');
         // Dropdown arrow sourced from Icons8
         dropdownArrow.classList.add('portfolio_project-expand-collapse-arrow');
         dropdownArrow.src = 'https://img.icons8.com/material/24/000000/expand-arrow--v3.png';
         dropdownArrow.alt = 'Expand';
+        
+        header.appendChild(headerText);
         header.appendChild(dropdownArrow);
 
         wrapper.appendChild(header);

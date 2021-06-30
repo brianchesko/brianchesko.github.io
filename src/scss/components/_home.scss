@@ -283,11 +283,9 @@ section {
 
         &-heading {
             position: relative;
+            display: flex;
             padding: 0 1em;
-            overflow: hidden;
-            white-space: nowrap;
             font-size: 1.5em;
-            // TODO: vary font size or otherwise handle text running long on small screen sizes
             transition: font-size 1s ease;
             &:hover {
                 background-color: var(--accent);
@@ -331,14 +329,17 @@ section {
             }
         }
 
+        &-heading-text {
+            flex: 85;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         &-expand-collapse-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 0;
+            flex: 15;
             max-width: 24px;
             transition: max-width 1s ease;
-            padding-right: 24px;
 
             &__hidden {
                 max-width: 0px;
