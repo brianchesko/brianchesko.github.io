@@ -154,10 +154,12 @@
 
 #coursework {
     &_list {
-        display: inline-block;
+        display: block;
         width: auto;
+        max-width: max-content;
         max-height: 0;
-        margin: 0;
+        padding-left: 0;
+        margin: 0 auto;
         transition: max-height 1s ease;
         overflow: hidden;
 
@@ -171,13 +173,15 @@
     &_subject {
         text-align: center;
     }
+
+    &_course {
+        list-style: none;
+    }
 }
 
 section {
     &.main-content {
         margin: 2em auto;
-        min-width: 400px;
-        max-width: 800px;
         h1 {
             margin-bottom: 0.4em;
         }
@@ -190,6 +194,14 @@ section {
 #resume {
     display: inline-block;
     margin-right: 1rem;
+
+    &_wrapper {
+        min-width: 400px;
+        max-width: 800px;
+        // rest of the document is margin auto with 88% width, so just left align this 6%
+        margin-left: 6%;
+        margin-right: 6%;
+    }
 }
 
 #resume-header {
