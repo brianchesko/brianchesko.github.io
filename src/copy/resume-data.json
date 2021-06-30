@@ -1,0 +1,106 @@
+{
+    "projects": [
+        {
+            "id": "air-engine",
+            "name": "Reciprocating Air Engine",
+            "description": "Designed and modeled several components towards the production of a 50cc linkage-driven air-powered engine using SolidWorks, which achieved over 2000 RPM in steady state operation\nManufacturing aluminum, brass and delrin parts using various machining techniques including water jet cutting, milling, and reaming, and other operations",
+            "date": "Fall 2019",
+            "multimedia": [
+                {
+                    "type": "image",
+                    "src": "/img/crab.jpg"
+                },
+                {
+                    "type": "image",
+                    "src": "/img/crab.jpg"
+                }
+            ]
+        },
+        {
+            "id": "snake-rl",
+            "name": "Deep-Q Reinforcement Learning towards Playing Snake",
+            "date": "Fall 2019",
+            "description": "Developed a multithreaded, highly configurable Python implementation of Snake from scratch\nCreated and trained a Deep Q-Network reinforcement learning agent to play game using Keras-RL, TensorFlow and OpenAI Gym with near human-level accuracy"
+        },
+        {
+            "id": "car-body-cfd",
+            "name": "SolidWorks Flow Sim Car Body CFD Optimization",
+            "date": "Spring 2020",
+            "description": "Designed the exterior of a model car to maximize downforce and minimize aerodynamic drag\nRan studies using the SolidWorks Flow Simulation toolbox to quantify effects of modifications\nIncorporated components such as wings, vortex generators, and geometries based on fluid flow theory to achieve a lift-to-drag ratio of -3.5"
+        },
+        {
+            "id": "snakey-bakey",
+            "name": "Soft Robotic Snake for RoboSoft Competition",
+            "date": "Spring 2021",
+            "description": "Worked in a team of students across various engineering disciplines to develop a robotic snake capable of traversing an obstacle course including multiple terrains and conditions\nUtilized modular design consisting of segments interconnected by motor-actuated wires which propagate contraction and tension of wires to compress springs to create motion"
+        },
+        {
+            "id": "differential-gearbox",
+            "name": "3D Printed and Machined Differential Gearbox",
+            "date": "Fall 2019",
+            "description": "Utilized SolidWorks to model a differential required to handle two inputs of 1000 RPM and produce an output of 500 RPM\nConstructed the design out of 3D-printed bevel and spur gears and a machined aluminum housing\nPerformed static and fatigue analysis of the parts using SolidWorks to determine the failure conditions and factor of safety of the design"
+        },
+        {
+            "id": "ball-and-beam",
+            "name": "Modeling and Control of Ball and Beam System",
+            "date": "Fall 2020 – Spring 2021",
+            "description": "Modeled an implementation of a ball-and-beam system with 14” track using SolidWorks upon which a ball can roll lengthwise with desired equilibrium ball position input fed via Arduino\nComputed governing equations using dynamics analysis\nImplemented and tuned PID control system within MATLAB Simulink according to minimize response time and overshoot\nPlotted theoretical ball position versus time for desired ball position inputs"
+        },
+        {
+            "id": "beachworm-music",
+            "name": "BeachWorm Music Recommendation Web App",
+            "date": "Spring 2021",
+            "description": "Developed a responsive web application designed to offer music playback and recommendations based on a like-and-dislike system with features such as playlist creation and customization\nImplemented back-end RESTful API using a stack based on the Django Python framework with a SQLite database and front-end with React and Material UI, utilizing the Spotify Web Playback SDK for in-browser persistent song playback across pages\nFollowed standard software development practices such as creation of wireframes and design documentation across development phases"
+        },
+        {
+            "id": "personal-webpage",
+            "name": "Personal Webpage",
+            "date": "Spring 2021",
+            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and toggling elements using JavaScript. Specific resume line items are loaded in via a JSON file that may be hot-swapped at any time just by editing an item."
+        }
+    ],
+    "internships": [
+        {
+            "id": "nasa-intern",
+            "position": "Electrified Propulsion Project Intern",
+            "location": "Cleveland, OH",
+            "company": "NASA Glenn Research Center",
+            "description": "Created 3d printed models and circuit models for use in lab testing set-up including Altium schematic and PCB designs and SolidWorks models\nDeveloped Simulink simulation elements towards an efficient real-time implementation of a high-lift motor controller system\nProduced mechanical drawings for fabrication of aerospace hardware test setup required to resist large vibrational forces according to GD&T (ASME Y14.5) standards",
+            "date": "June 2020 – Aug. 2020"
+        },
+        {
+            "id": "clover-backend",
+            "position": "Software Engineering Intern (Back-end)",
+            "location": "New York, NY",
+            "company": "Clover Network",
+            "description": "Built RESTful API endpoints on top of the product’s Java + Hibernate back-end stack and associated queries to pull from and store data within the PostgreSQL database\nRedesigned and implemented the Java back-end for a service allowing merchants to efficiently import multi-thousand row CSV files of external customer lists into their customer audience\nUpdated behavior and logic of existing web service features according to new specifications; documented these changes within internal documentation",
+            "date": "May 2019 – Aug 2019"
+        },
+        {
+            "id": "clover-frontend",
+            "position": "Software Engineering Intern (Front-end)",
+            "location": "New York, NY",
+            "company": "Clover Network",
+            "description": "Designed and implemented the logic for a new part of the clover.com front-end shop experience using a responsive React/Redux-based ES6 framework using TypeScript\nFound, analyzed and fixed JIRA-ticketed visual and behavioral bugs within the front-end codebase\nParticipated in an Agile development environment to streamline production releases",
+            "date": "July 2018 – September 2018"
+        }
+    ],
+    "jobs": [
+        {
+            "id": "tutoring",
+            "position": "Learning Assistant and Tutor",
+            "location": "Glassboro, NJ",
+            "company": "Rowan University Computer Science Department",
+            "description": "Instructed and oversaw students in lab classes of up to 30 students to help teach computer science course material concepts\nAssisted in sections of Introduction to Object-Oriented Programming and Data Structures & Algorithms and hosted one-on-one online office hours\nProvided one-on-one assistance to students as necessary to address lapses in understanding and reinforce good programming practices",
+            "date": "Jan. 2018 – May 2021"
+        },
+        {
+            "id": "dunkin",
+            "position": "Shift Lead and Counter Service",
+            "location": "Hamilton, NJ",
+            "company": "Dunkin' Donuts",
+            "description": "Closed store independently at the end of each shift\nCounted and balanced registers to ensure accurate accounts\nTrained several new employees on standard operating procedures\nPrepared food and beverages according to order and consistent with organizational and health standards",
+            "date": "May 2015 – Jan. 2018"
+        }
+    ]
+}

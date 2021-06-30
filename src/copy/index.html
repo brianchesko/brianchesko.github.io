@@ -34,6 +34,8 @@
 
 	<main>
 		<section id="banner_wrapper">
+			<img id="banner_image1" class="banner_image banner_image__active" src="./img/crab.jpg" alt="Heading banner" />
+			<img id="banner_image2" class="banner_image" />
 			<h1 id="banner_heading">Brian Chesko</h1>
 		</section>
 
@@ -83,15 +85,10 @@
 					</a>
 				</h2>
 				<h3>Rowan University</h3>
-				<div>
-					<div class="resume-line degree-line">
-						<p>Bachelor of Science, Mechanical Engineering</p>
-						<p class="resume-line_date">May 2021, Summa Cum Laude</em>
-					</div>
-					<div class="resume-line degree-line">
-						<p>Bachelor of Science, Computer Science</p>
-						<p class="resume-line_date">May 2021, Summa Cum Laude</em>
-					</div>
+				<div class="resume-line degree-line">
+					<p>Bachelor of Science, Mechanical Engineering</p>
+					<p>Bachelor of Science, Computer Science</p>
+					<p class="resume-line_date">May 2021, Summa Cum Laude</em>
 				</div>
 	
 				<div id="honors">
@@ -135,75 +132,30 @@
 				</div>
 			</div>
 
+			<!-- Individual internship items loaded in via JS -->
 			<div class="resume_section" id="internships">
 				<h2>
 					<a href="#internships" class="heading-link link__internal">
 						Internship experiences
 					</a>
 				</h2>
-
-				<div class="resume-line">
+				<div id="resume-internship-placeholder" class="resume-line">
 					<div class="resume-line_title">
-						<h3>NASA Engineering Intern</h3>
-						<h4>NASA Glenn Research Center, Cleveland, OH</h4>
-						<h4>June 2020 – Aug. 2020</h4>
-					</div>
-					<div class="resume-line_description">
-						<p>temp</p>
-						<p>temp 2</p>
-					</div>
-				</div>
-				
-				<div class="resume-line">
-					<div class="resume-line_title">
-						<h3>Software Engineering Intern</h3>
-						<h4>Clover Network, New York, NY</h4>
-						<h4>May 2019 – Aug 2019</h4>
-					</div>
-					<div class="resume-line_description">
-						<p>temp</p>
-					</div>
-				</div>
-				
-				<div class="resume-line">
-					<div class="resume-line_title">
-						<h3>Software Engineering Intern</h3>
-						<h4>Clover Network, New York, NY</h4>
-						<h4>July 2018 – September 2018</h4>
-					</div>
-					<div class="resume-line_description">
-						<p>temp</p>
-						<p>temp 2</p>
+						<h3>Positions loading...</h3>
 					</div>
 				</div>
 			</div>
 
+			<!-- Individual job items loaded in via JS -->
 			<div class="resume_section" id="work">
 				<h2>
 					<a href="#work" class="heading-link link__internal">
 						Work experiences
 					</a>
 				</h2>
-				<div class="resume-line">
+				<div id="resume-work-placeholder" class="resume-line">
 					<div class="resume-line_title">
-						<h3>Learning Assistant and Tutor</h3>
-						<h4>Rowan University Computer Science Department</h4>
-						<h4>Jan. 2018 – May 2021</h4>
-					</div>
-					<div class="resume-line_description">
-						<p>temp</p>
-						<p>temp 2</p>
-					</div>
-				</div>
-				<div class="resume-line">
-					<div class="resume-line_title">
-						<h3>Shift Lead and Counter Service</h3>
-						<h4>Dunkin' Donuts</h4>
-						<h4>May 2015 – Jan. 2018</h4>
-					</div>
-					<div class="resume-line_description">
-						<p>temp</p>
-						<p>temp 2</p>
+						<h3>Positions loading...</h3>
 					</div>
 				</div>
 			</div>
@@ -219,14 +171,13 @@
 			<div id="portfolio_all-projects">
 				<!-- This is built in programmatically! -->
 				<div id="portfolio_placeholder" class="portfolio_project-wrapper">
-					<h2 class="portfolio_project-heading">Loading projects...</h2>
+					<h3 class="portfolio_project-heading">Loading projects...</h2>
 				</div>
 			</div>
 		</section>
 	</main>
 
 	<!-- Scripts -->
-	<script src="js/detects.js"></script>
 	<script src="js/onload.js"></script>
 	<script src="js/main.js"></script>
 </body>

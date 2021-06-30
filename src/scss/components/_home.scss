@@ -64,9 +64,9 @@
         width: 100%;
         max-width: 100%;
         position: relative;
-        // background-color: var(--deep-accent);
 
-        &:before {
+        // after element hides the image gallery and then reveals it after page load via transition
+        &:after {
             content: '';
             display: block;
             position: absolute;
@@ -74,26 +74,40 @@
             top: 0;
             width: 100%;
             height: 100%;
-            opacity: 0;
-            transition: opacity 1.25s ease-in;
-            overflow: hidden;
-            background-image: url('./../img/crab.jpg');
-            background-size: cover;
+            opacity: 1;
+            transition: opacity 1.5s ease-in-out;
+            background-color: var(--deep-accent);
         }
 
         &.active {
-            &:before {
-                opacity: 0.6;
+            &:after {
+                opacity: 0.0;
             }
         }
     }
 
     &_heading {
+        position: relative;
         font-size: 4em;
         margin: 0 0 0 1em;
         padding: 2em 0;
         color: var(--highlight);
         font-weight: 300;
+    }
+}
+
+.banner_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease;
+
+    &__active {
+        opacity: 1;
     }
 }
 
@@ -195,8 +209,8 @@ section {
     margin: 1.5em 0;
 
     &.degree-line {
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
     }
 
     * {
@@ -227,10 +241,11 @@ section {
         }
 
         &-heading {
+            position: relative;
             padding: 0 1em;
             overflow: hidden;
             white-space: nowrap;
-            font-size: 2em;
+            font-size: 1.5em;
             transition: font-size 1s ease;
             &:hover {
                 background-color: var(--accent);
@@ -255,7 +270,7 @@ section {
                 max-width: 0;
                 max-height: 0;
                 margin: 0;
-                > h2 {
+                > h3 {
                     font-size: 0;
                 }
             }
@@ -268,9 +283,23 @@ section {
                     max-height: 100em;
                     font-size: 1em;
                 }
-                > h2 {
+                > h3 {
                     cursor: pointer;
                 }
+            }
+        }
+
+        &-expand-collapse-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            max-width: 24px;
+            transition: max-width 1s ease;
+            padding-right: 24px;
+
+            &__hidden {
+                max-width: 0px;
             }
         }
     }
