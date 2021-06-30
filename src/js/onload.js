@@ -38,6 +38,8 @@ const populateProjects = (projects) => {
 
     const allProjectsWrapper = document.getElementById('portfolio_all-projects');
 
+    var expandedId = undefined;
+
     const createExpandListener = (wrapperEl) => {
         wrapperEl.addEventListener('click', (event) => {
             const targetId = event.currentTarget.id;
@@ -45,12 +47,15 @@ const populateProjects = (projects) => {
             const project = projectMap[projectId];
             const targetClasses = Array.from(wrapperEl.classList);
 
+            if (expandedId) {
+                return;
+            }
+            expandedId = targetId;
+
             if (projectId && project && !targetClasses.includes('portfolio_project-wrapper__expanded')) {
                 console.log(`Expanding ${projectId}`);
                 event.stopPropagation();
-                // fill in the name, description etc from json
-                // fillerProject.classList.toggle('visible');
-                // fillerHeading.innerText = project.name;
+                
                 event.currentTarget.classList.add('portfolio_project-wrapper__expanded');
 
                 const allDropdowns = Array.from(
@@ -94,6 +99,10 @@ const populateProjects = (projects) => {
             const projectId = targetId.includes('portfolio_') && targetId.replace('portfolio_', '');
             const project = projectMap[projectId];
 
+            if (expandedId != targetId) {
+                return;
+            }
+
             const targetClasses = Array.from(targetEl.classList);
 
             if (projectId && project && targetClasses.includes("portfolio_project-wrapper__expanded")) {
@@ -118,6 +127,7 @@ const populateProjects = (projects) => {
                     }
                 });
             }
+            expandedId = undefined;
         }, false);
     }
 
