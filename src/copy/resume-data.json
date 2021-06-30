@@ -82,7 +82,7 @@
             "location": "New York, NY",
             "company": "Clover Network",
             "description": "Built RESTful API endpoints on top of the product’s Java + Hibernate back-end stack and associated queries to pull from and store data within the PostgreSQL database\nRedesigned and implemented the Java back-end for a service allowing merchants to efficiently import multi-thousand row CSV files of external customer lists into their customer audience\nUpdated behavior and logic of existing web service features according to new specifications; documented these changes within internal documentation",
-            "date": "May 2019 – Aug 2019"
+            "date": "May 2019 – Aug. 2019"
         },
         {
             "id": "clover-frontend",
@@ -90,7 +90,7 @@
             "location": "New York, NY",
             "company": "Clover Network",
             "description": "Designed and implemented the logic for a new part of the clover.com front-end shop experience using a responsive React/Redux-based ES6 framework using TypeScript\nFound, analyzed and fixed JIRA-ticketed visual and behavioral bugs within the front-end codebase\nParticipated in an Agile development environment to streamline production releases",
-            "date": "July 2018 – September 2018"
+            "date": "July 2018 – Sept. 2018"
         }
     ],
     "jobs": [

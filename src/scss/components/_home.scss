@@ -176,10 +176,12 @@
 section {
     &.main-content {
         margin: 2em auto;
+        min-width: 400px;
+        max-width: 800px;
         h1 {
             margin-bottom: 0.4em;
         }
-        h2, h3 {
+        h2, h3, h4, h5, h6 {
             margin: 0.4em 0;
         }
     }
@@ -203,24 +205,38 @@ section {
 }
 
 .resume-line {
-    min-width: 400px;
-    max-width: 800px;
+    display: flex;
     margin: 1.5em 0;
     align-items: center;
 
-    &.degree-line {
-        display: flex;
+    /*
+     * Degrees, honors (very similar styling)
+     */
+    &.honor-wrapper, &.degree-line {
         margin: 1em 0;
     }
 
-    &_degree-names {
+    &_degree-names, &_honor-title {
         flex: 70;
         margin-right: 2.5em;
     }
 
-    &_degree-date {
+    &_degree-date, &_honor-date {
         flex: 30;
         text-align: end;
+    }
+
+    /*
+     * Internships, work
+     */
+    &_title {
+        align-self: flex-start;
+        flex: 25;
+        margin-right: 2em;
+    }
+
+    &_description {
+        flex: 75;
     }
 
     * {
@@ -239,6 +255,10 @@ section {
     &:hover {
         text-decoration: underline;
     }
+}
+
+#honors-heading, #school-name {
+    font-size: 1.25em;
 }
 
 .portfolio {
@@ -318,7 +338,6 @@ section {
 
 .certification {
     &_cert-wrapper {
-        display: flex;
         margin: 1em 0;
     }
 
