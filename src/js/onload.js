@@ -199,14 +199,17 @@ const createResumeLineItem = (item) => {
     titleWrapper.classList.add('resume-line_title');
 
     const titleEl = document.createElement('h3');
+    const companyEl = document.createElement('h4');
     const locationEl = document.createElement('h4');
     const dateEl = document.createElement('h4');
 
     titleEl.innerText = item.position;
+    companyEl.innerText = item.company;
     locationEl.innerText = item.location;
     dateEl.innerText = item.date;
 
     titleWrapper.appendChild(titleEl);
+    titleWrapper.appendChild(companyEl);
     titleWrapper.appendChild(locationEl);
     titleWrapper.appendChild(dateEl);
 
