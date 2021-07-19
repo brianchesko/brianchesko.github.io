@@ -7,6 +7,8 @@ const bannerImageElements = [
 const bannerImageDir = './img/';
 const bannerImages = ["grad-stair-gradient.jpg", "moon.jpg", "ocean.jpg"]; // TODO: get actual images
 
+var expandedId = undefined;
+
 if (bannerWrapper) {
     // throw this on with js to ensure page has fully loaded
     bannerWrapper.classList.add('active');
@@ -120,59 +122,69 @@ const createPortfolioVideo = (mediaItem) => {
     return video;
 }
 
+const expandProject = (projectId) => {
+    if (expandedId && projectId != expandedId) {
+        collapseProject(expandedId);
+    }
+
+    console.log(`Expanding ${projectId}`);
+    expandedId = projectId;
+
+    const wrapperId = `portfolio_${projectId}`;
+    const projectWrapper = document.getElementById(wrapperId);
+
+    projectWrapper.classList.add('portfolio_project-wrapper__expanded');
+
+    const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
+
+    // this should never fail unless someone messed with the DOM
+    if (arrow) {
+        arrow.src = 'https://img.icons8.com/material/20/000000/collapse-arrow--v3.png';
+        arrow.alt = 'Collapse';
+        arrow.classList.add('portfolio_project-expand-collapse-arrow__expanded');
+    }
+
+    // TODO: consider the following -- what if instead of adding the multimedia at element creation time,
+    // we just create them here on expand and destroy them after collapse (or just not create them again)? not sure
+    // if that would be helpful, although would prevent loading of a ton of images at once
+};
+
+const collapseProject = (projectId) => {
+    if (expandedId != projectId) {
+        return;
+    }
+
+    console.log(`Collapsing ${projectId}`)
+    expandedId = undefined;
+
+    const wrapperId = `portfolio_${projectId}`;
+    const projectWrapper = document.getElementById(wrapperId);
+
+    projectWrapper.classList.remove('portfolio_project-wrapper__expanded');
+
+    const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
+
+    if (arrow) {
+        arrow.src = 'https://img.icons8.com/material/24/000000/expand-arrow--v3.png';
+        arrow.alt = 'Collapse';
+        arrow.classList.remove('portfolio_project-expand-collapse-arrow__expanded');
+    }
+};
+
 const populateProjects = (projects) => {
     const projectMap = {};
 
     const allProjectsWrapper = document.getElementById('portfolio_all-projects');
-
-    var expandedId = undefined;
 
     const createExpandListener = (wrapperEl) => {
         wrapperEl.addEventListener('click', (event) => {
             const targetId = event.currentTarget.id;
             const projectId = targetId.includes('portfolio_') && targetId.replace('portfolio_', '');
             const project = projectMap[projectId];
-            const targetClasses = Array.from(wrapperEl.classList);
 
-            if (expandedId) {
-                return;
-            }
-            expandedId = targetId;
-
-            if (projectId && project && !targetClasses.includes('portfolio_project-wrapper__expanded')) {
-                console.log(`Expanding ${projectId}`);
+            if (projectId && project && expandedId != projectId) {
                 event.stopPropagation();
-
-                event.currentTarget.classList.add('portfolio_project-wrapper__expanded');
-
-                const allDropdowns = Array.from(
-                    document.getElementsByClassName('portfolio_project-expand-collapse-arrow')
-                );
-
-                allDropdowns.forEach(arrow => {
-                    if (arrow.parentElement.parentElement.id == targetId) {
-                        arrow.src = 'https://img.icons8.com/material/20/000000/collapse-arrow--v3.png';
-                        arrow.alt = 'Collapse';
-                        arrow.classList.add('portfolio_project-expand-collapse-arrow__expanded');
-                    } else {
-                        arrow.classList.add('portfolio_project-expand-collapse-arrow__hidden');
-                    }
-                });
-
-                // TODO: consider the following -- what if instead of adding the multimedia at element creation time,
-                // we just create them here on expand and destroy them after collapse (or just not create them again)? not sure
-                // if that would be helpful, although would prevent loading of a ton of images at once
-
-                projects.forEach(proj => {
-                    const currentName = proj.id;
-                    const currEl = document.getElementById(`portfolio_${currentName}`);
-                    // set every other to hidden
-                    if (currEl && currentName != projectId) {
-                        currEl.classList.add('portfolio_project-wrapper__hidden');
-                    }
-                });
-            } else {
-                console.log(`Project not found with name ${projectId}`);
+                expandProject(projectId);
             }
         }, false);
     }
@@ -181,40 +193,13 @@ const populateProjects = (projects) => {
         headerEl.addEventListener('click', (event) => {
             // grab project name from the header's parent
             const headerEl = event.currentTarget;
-            const targetEl = headerEl.parentElement;
-            const targetId = targetEl.id;
+            const targetId = headerEl.parentElement.id;
             const projectId = targetId.includes('portfolio_') && targetId.replace('portfolio_', '');
-            const project = projectMap[projectId];
 
-            if (expandedId != targetId) {
-                return;
-            }
-
-            const targetClasses = Array.from(targetEl.classList);
-
-            if (projectId && project && targetClasses.includes("portfolio_project-wrapper__expanded")) {
+            if (expandedId == projectId) {
                 event.stopPropagation();
-                console.log(`Collapsing ${projectId}`)
-                targetEl.classList.remove('portfolio_project-wrapper__expanded');
-                projects.forEach(proj => {
-                    const currEl = document.getElementById(`portfolio_${proj.id}`);
-                    currEl.classList.remove('portfolio_project-wrapper__hidden');
-                });
-
-                const allDropdowns = Array.from(document.getElementsByClassName('portfolio_project-expand-collapse-arrow'));
-                allDropdowns.forEach(arrow => {
-                    if (arrow.parentElement.parentElement.id != targetId) {
-                        // remove the hidden css from the hidden arrows
-                        arrow.classList.remove('portfolio_project-expand-collapse-arrow__hidden');
-                    } else {
-                        // swap out the collapse arrow on the collapsed header with expand arrow
-                        arrow.src = 'https://img.icons8.com/material/24/000000/expand-arrow--v3.png';
-                        arrow.alt = 'Collapse';
-                        arrow.classList.remove('portfolio_project-expand-collapse-arrow__expanded');
-                    }
-                });
+                collapseProject(projectId);
             }
-            expandedId = undefined;
         }, false);
     }
 
@@ -334,6 +319,7 @@ const populateProjects = (projects) => {
 
         // add to top-level
         allProjectsWrapper.appendChild(wrapper);
+
         createExpandListener(wrapper);
         createCollapseListener(header);
 
