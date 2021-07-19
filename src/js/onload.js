@@ -5,7 +5,7 @@ const bannerImageElements = [
     document.getElementById('banner_image1'), document.getElementById('banner_image2')
 ]
 const bannerImageDir = './img/';
-const bannerImages = ["crab.jpg", "moon.jpg", "ocean.jpg"]; // TODO: get actual images
+const bannerImages = ["grad-stair-gradient.jpg", "moon.jpg", "ocean.jpg"]; // TODO: get actual images
 
 if (bannerWrapper) {
     // throw this on with js to ensure page has fully loaded
