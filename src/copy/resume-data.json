@@ -175,7 +175,7 @@
             "name": "BeachWorm Music Recommendation Web App",
             "date": "Spring 2021",
             "description": "Developed a responsive web application designed to offer music playback and recommendations based on a like-and-dislike system with features such as playlist creation and customization\nImplemented back-end RESTful API using a stack based on the Django Python framework with a SQLite database and front-end with React and Material UI, utilizing the Spotify Web Playback SDK for in-browser persistent song playback across pages\nFollowed standard software development practices such as creation of wireframes and design documentation across development phases",
-            "skills": ["React", "JavaScript", "Python", "Django", "REST"],
+            "skills": ["React", "JavaScript", "Python", "Django", "REST", "HTML", "CSS", "SASS"],
             "multimedia": [
                 {
                     "type": "youtube",
