@@ -99,7 +99,42 @@
             "name": "3D Printed and Machined Differential Gearbox",
             "date": "Fall 2019",
             "description": "Utilized SolidWorks to model a differential required to handle two inputs of 1000 RPM and produce an output of 500 RPM\nConstructed the design out of 3D-printed bevel and spur gears and a machined aluminum housing\nPerformed static and fatigue analysis of the parts using SolidWorks to determine the failure conditions and factor of safety of the design",
-            "skills": ["SolidWorks", "3d printing", "Machining", "Failure analysis"]
+            "skills": ["SolidWorks", "3d printing", "Machining", "Failure analysis"],
+            "multimedia": [
+                {
+                    "type": "image",
+                    "src": "./img/differential/differential-irl-iso.jpg",
+                    "caption": "Slight isometric view of the constructed differential"
+                }, {
+                    "type": "image",
+                    "src": "./img/differential/differential-irl-top.jpg",
+                    "caption": "Top view of the constructed differential"
+                }, {
+                    "type": "youtube",
+                    "src": "https://www.youtube.com/embed/xvfQETMOSH0",
+                    "caption": "Video presented as part of a project report for the Machine Design course including the gearbox project."
+                }, {
+                    "type": "image",
+                    "src": "./img/differential/diff-model-iso.png",
+                    "caption": "Isometric view of the SOLIDWORKS gearbox model"
+                }, {
+                    "type": "image",
+                    "src": "./img/differential/diff-model-top.png",
+                    "caption": "Top view of the SOLIDWORKS gearbox model"
+                }, {
+                    "type": "image",
+                    "src": "./img/differential/diff-fea-input-gear.png",
+                    "caption": "Results of FEA stress analysis with a tangential load of 0.501 kN on a single tooth, which was determined to be the transmitted load given inputs of 1000 W at 1000 rpm and a pitch diameter of 1.5 in (38.1 mm)"
+                }, {
+                    "type": "image",
+                    "src": "./img/differential/diff-drawing-exploded.png",
+                    "caption": "SOLIDWORKS exploded drawing of the gearbox assembly"
+                }, {
+                    "type": "image",
+                    "src": "./img/differential/diff-drawing-combined.png",
+                    "caption": "SOLIDWORKS combined drawing of four 3d views of the assembly"
+                }
+            ]
         },
         {
             "id": "ball-and-beam",
