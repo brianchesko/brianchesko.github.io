@@ -141,14 +141,48 @@
             "name": "Modeling and Control of Ball and Beam System",
             "date": "Fall 2020 – Spring 2021",
             "description": "Modeled an implementation of a ball-and-beam system with 14” track using SolidWorks upon which a ball can roll lengthwise with desired equilibrium ball position input fed via Arduino\nComputed governing equations using dynamics analysis\nImplemented and tuned PID control system within MATLAB Simulink according to minimize response time and overshoot\nPlotted theoretical ball position versus time for desired ball position inputs",
-            "skills": ["Control systems", "MATLAB", "Simulink", "SolidWorks"]
+            "skills": ["Control systems", "MATLAB", "Simulink", "SolidWorks"],
+            "multimedia": [
+                {
+                    "type": "image",
+                    "src": "./img/ball-beam/ball-beam-3d-styled.png",
+                    "caption": "Isometric view of the 3d SOLIDWORKS model of the ball and beam setup. Arduino and wiring connections are omitted for simplicity."
+                }, {
+                    "type": "image",
+                    "src": "./img/ball-beam/ball-beam-dimensioned-drawing.png",
+                    "caption": "Dimensioned drawing of the side view."
+                }, {
+                    "type": "image",
+                    "src": "./img/ball-beam/ball-beam-simulink.png",
+                    "caption": "Simulink simulation elements modeling the ball position over time."
+                }, {
+                    "type": "image",
+                    "src": "./img/ball-beam/ball-beam-continuous-plot.png",
+                    "caption": "Output of the Simulink simulation for 30 second intervals of the ball desired position set to 0, 6, 2, and 11 inches."
+                }, {
+                    "type": "image",
+                    "src": "./img/ball-beam/ball-beam-exported-continuous-plot.png",
+                    "caption": "Output of the Simulink simulation for 30 second intervals of the ball desired position set to 0, 6, 2, and 11 inches, but exported to the MATLAB plot viewer to find ±2% steady state time values."
+                }, {
+                    "type": "image",
+                    "src": "./img/ball-beam/ball-beam-iso-solidworks.png",
+                    "caption": "Wireframe iso view of the model."
+                }
+            ]
         },
         {
             "id": "beachworm-music",
             "name": "BeachWorm Music Recommendation Web App",
             "date": "Spring 2021",
             "description": "Developed a responsive web application designed to offer music playback and recommendations based on a like-and-dislike system with features such as playlist creation and customization\nImplemented back-end RESTful API using a stack based on the Django Python framework with a SQLite database and front-end with React and Material UI, utilizing the Spotify Web Playback SDK for in-browser persistent song playback across pages\nFollowed standard software development practices such as creation of wireframes and design documentation across development phases",
-            "skills": ["React", "JavaScript", "Python", "Django", "REST"]
+            "skills": ["React", "JavaScript", "Python", "Django", "REST"],
+            "multimedia": [
+                {
+                    "type": "youtube",
+                    "src": "https://www.youtube.com/embed/jAv_OQBkbd8",
+                    "caption": "Final demo video submitted as part of the Senior Project capstone showcasing a majority of functionality developed for the application"
+                }
+            ]
         },
         {
             "id": "personal-webpage",
