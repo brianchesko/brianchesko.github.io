@@ -188,8 +188,8 @@
             "id": "personal-webpage",
             "name": "Personal Webpage",
             "date": "Spring 2021",
-            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and JavaScript. Specific resume line items are loaded in via a JSON file that may be hot-swapped at any time just by editing an item.",
-            "skills": ["HTML", "CSS", "JavaScript", "Design"]
+            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and JavaScript. Specific resume line items including text, images, colors and names for these (↓) technologies, etc. are loaded in via a JSON file that may be hot-swapped by editing an item in the file.",
+            "skills": ["HTML", "CSS", "SASS", "JavaScript", "Design"]
         }
     ],
     "internships": [
@@ -235,5 +235,32 @@
             "description": "Closed store independently at the end of each shift\nCounted and balanced registers to ensure accurate accounts\nTrained several new employees on standard operating procedures\nPrepared food and beverages according to order and consistent with organizational and health standards",
             "date": "May 2015 – Jan. 2018"
         }
-    ]
+    ],
+    "skills": {
+        "progLangs": {
+            "name": "Programming Languages",
+            "color": "#2a8a04",
+            "items": ["java", "c", "c++", "html", "css", "scss", "sass", "javascript", "es6", "python", "matlab", "django", "react", "redux", "keras-rl"]
+        },
+        "tools": {
+            "name": "Tools",
+            "color": "#60241f",
+            "items": ["solidworks", "arduino", "altium", "simulink", "jira", "git", "github", "vim"]
+        },
+        "skills": {
+            "name": "Concepts",
+            "color": "#348abf",
+            "items": ["design", "rest", "control systems", "mechanical design", "failure analysis", "cfd", "flow visualization", "gd&t", "machining", "fabrication", "3d printing", "project management"]
+        },
+        "dataScience": {
+            "name": "Data Science",
+            "color": "#672c73",
+            "items": ["machine learning", "ml", "reinforcement learning", "keras-rl"]
+        },
+        "operatingSystems": {
+            "name": "Operating Systems",
+            "color": "#310b63",
+            "items": ["linux", "unix", "macos", "windows"]
+        }
+    }
 }

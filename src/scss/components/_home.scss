@@ -162,7 +162,6 @@
         display: block;
         width: auto;
         max-width: max-content;
-        max-height: 0;
         padding-left: 0;
         margin: 0 auto;
         transition: max-height 1s ease;
@@ -283,14 +282,24 @@ section {
 
 .portfolio {
     &_project {
-        * {
+        &-content {
+            max-height: 0;
             transition: max-height 1s ease;
+            overflow: hidden;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            * {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
         }
 
         &-desc {
-            padding: 0 2em;
-            max-height: 0;
-            font-size: 0;
+            padding: 0 2rem;
+            // font-size: 0;
             transition: max-height 1s ease, font-size 1s ease;
         }
 
@@ -307,7 +316,7 @@ section {
 
         &-wrapper {
             background-color: var(--light-accent); 
-            border: 2px solid var(--highlight); // #615e5e
+            border: 2px solid var(--highlight);
             border-radius: 0.25em;
             cursor: pointer;
             margin: 1em 0;
@@ -330,14 +339,11 @@ section {
 
             &__expanded {
                 max-height: 100em;
-                * {
+                .portfolio_project-content {
                     max-height: 100em !important;
                 }
-                .project-multimedia_wrapper {
-                    margin: 1em;
-                }
                 cursor: auto;
-                > p {
+                > p, span {
                     font-size: 1em;
                 }
                 > h3 {
@@ -362,6 +368,11 @@ section {
                 max-width: 0px;
             }
         }
+
+        &-skills-wrapper {
+            display: flex;
+            padding: 0 2em;
+        }
     }
 }
 
@@ -371,7 +382,6 @@ section {
         grid-template-columns: auto minmax(300px, 80%) auto;
         grid-template-rows: minmax(auto, 600px) auto auto;
         // grid-template-rows: repeat(3, auto);
-        max-height: 0;
         transition: max-height 1s ease, margin 1s ease;
         overflow: hidden;
         margin: 0;
@@ -385,7 +395,6 @@ section {
         // height: 600px;
         width: 100%; // TODO: select these width, height values responsively
         margin: 1em;
-        max-height: 0;
         overflow: hidden;
         white-space: nowrap;
         transition: max-height 1s ease;
@@ -441,6 +450,24 @@ section {
 
         &__active {
             opacity: 1;
+        }
+    }
+}
+
+.skills {
+    &_item {
+        transition: font-size 1s ease, max-height 1s ease;
+        margin: 0.15em 0.3em;
+        padding: 0.25em;
+        border: 2px solid var(--accent);
+        border-radius: 0.5em;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
         }
     }
 }

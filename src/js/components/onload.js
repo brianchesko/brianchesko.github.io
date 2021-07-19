@@ -171,10 +171,21 @@ const collapseProject = (projectId) => {
     }
 };
 
-const populateProjects = (projects) => {
+const populateProjects = (projects, skillGroups) => {
     const projectMap = {};
+    const skillGroupSets = {};
 
     const allProjectsWrapper = document.getElementById('portfolio_all-projects');
+
+    const getSkillGroupNames = (element) => {
+        const groups = [];
+        for (let [groupName, set] of Object.entries(skillGroupSets)) {
+            if (set.has(element)) {
+                groups.push(groupName);
+            }
+        }
+        return groups;
+    }
 
     const createExpandListener = (wrapperEl) => {
         wrapperEl.addEventListener('click', (event) => {
@@ -187,7 +198,7 @@ const populateProjects = (projects) => {
                 expandProject(projectId);
             }
         }, false);
-    }
+    };
 
     const createCollapseListener = (headerEl) => {
         headerEl.addEventListener('click', (event) => {
@@ -201,7 +212,47 @@ const populateProjects = (projects) => {
                 collapseProject(projectId);
             }
         }, false);
-    }
+    };
+
+    const createSkillSpans = (proj, wrapperEl) => {
+        const skillWrapper = document.createElement('div');
+        skillWrapper.className = 'portfolio_project-skills-wrapper';
+        
+        const allSkills = proj.skills || [];
+
+        allSkills.forEach(skill => {
+            const relevantGroupNames = getSkillGroupNames(skill.toLowerCase());
+            const relevantGroups = relevantGroupNames.map(groupName => skillGroups[groupName]);
+
+            const span = document.createElement('span');
+            span.className = 'skills_item';
+            span.appendChild(document.createTextNode(skill));
+
+            if (relevantGroups.length) {
+                if (relevantGroups.length > 1) {
+                    const pct = 100 / relevantGroups.length;
+                    
+                    // the reducer turns each color into two strings, the first specifying the css for the color and start
+                    // position, the second specifying the color and end position. this creates hard edge lines so that
+                    // the gradient doesn't blend at all, but has distinct sections
+                    const colorString = relevantGroups.map(group => group.color).reduce((accumulator, color, index) => {
+                        accumulator.push(`${color} ${pct*index}%`, `${color} ${pct*(index+1)}%`)
+                        return accumulator;
+                    }, []);
+
+                    span.style = `background: linear-gradient(135deg, ${colorString})`;
+                } else {
+                    span.style = `background-color: ${relevantGroups[0].color}`;
+                }
+            }
+
+            skillWrapper.append(span);
+        });
+
+        wrapperEl.appendChild(skillWrapper);
+
+        return skillWrapper;
+    };
 
     // creates the project element, adds it to the dom, and returns it
     const createProjectElement = (proj) => {
@@ -211,6 +262,9 @@ const populateProjects = (projects) => {
 
         const header = document.createElement('h3');
         header.classList.add('portfolio_project-heading');
+
+        const contentWrapper = document.createElement('div');
+        contentWrapper.className = 'portfolio_project-content';
 
         const headerText = document.createElement('span');
         headerText.classList.add('portfolio_project-heading-text');
@@ -231,7 +285,11 @@ const populateProjects = (projects) => {
             const description = document.createElement('p');
             description.classList.add('portfolio_project-desc');
             description.innerText = proj.description;
-            wrapper.appendChild(description);
+            contentWrapper.appendChild(description);
+        }
+
+        if (proj.skills) {
+            createSkillSpans(proj, contentWrapper);
         }
 
         if (proj.multimedia) {
@@ -311,11 +369,11 @@ const populateProjects = (projects) => {
                     multimediaWrapper.appendChild(caption);
                 }
 
-                wrapper.appendChild(multimediaWrapper);
+                contentWrapper.appendChild(multimediaWrapper);
             }
-        }
+        };
 
-        // TODO: add relevant technologies to bottom of each project, add in from json
+        wrapper.appendChild(contentWrapper);
 
         // add to top-level
         allProjectsWrapper.appendChild(wrapper);
@@ -327,6 +385,11 @@ const populateProjects = (projects) => {
     }
 
     document.getElementById('portfolio_placeholder').remove();
+
+    // converts the JSON object with list children into a name:set map
+    Object.entries(skillGroups).forEach(([groupName, value]) => {
+        skillGroupSets[groupName] = new Set(value.items);
+    });
 
     // convert projects array to key value pairs for easier lookup
     projects.forEach(proj => {
@@ -400,7 +463,7 @@ projectRequest.onreadystatechange = () => {
 	if (projectRequest.readyState === 4 && projectRequest.status === 200) {
         const data = projectRequest.response;
         console.log('Resume data loaded', data);
-		populateProjects(data.projects);
+		populateProjects(data.projects, data.skills);
 		populateInternships(data.internships);
 		populateWork(data.jobs);
 	}
