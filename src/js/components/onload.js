@@ -135,9 +135,13 @@ const expandProject = (projectId) => {
 
     projectWrapper.classList.add('portfolio_project-wrapper__expanded');
 
-    const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
+    // dynamically set the max height to what it wants to be, fixes awkward animation timing mismatch
+    // for collapse vs expand when the heights are very small
+    const contentEl = projectWrapper.getElementsByClassName('portfolio_project-content')[0];
+    contentEl.style.maxHeight = contentEl.scrollHeight + 'px';
 
     // this should never fail unless someone messed with the DOM
+    const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
     if (arrow) {
         arrow.src = 'https://img.icons8.com/material/20/000000/collapse-arrow--v3.png';
         arrow.alt = 'Collapse';
@@ -162,11 +166,16 @@ const collapseProject = (projectId) => {
 
     projectWrapper.classList.remove('portfolio_project-wrapper__expanded');
 
-    const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
+    // dynamically set the max height to what it wants to be, fixes awkward animation timing mismatch
+    // for collapse vs expand when the heights are very small
+    const contentEl = projectWrapper.getElementsByClassName('portfolio_project-content')[0];
+    contentEl.style.removeProperty('max-height');
 
+    // swap out the expand arrow with a collapse one
+    const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
     if (arrow) {
         arrow.src = 'https://img.icons8.com/material/24/000000/expand-arrow--v3.png';
-        arrow.alt = 'Collapse';
+        arrow.alt = 'Expand';
         arrow.classList.remove('portfolio_project-expand-collapse-arrow__expanded');
     }
 };
