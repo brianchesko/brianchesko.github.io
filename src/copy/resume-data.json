@@ -5,16 +5,7 @@
             "name": "Reciprocating Air Engine",
             "description": "Designed and modeled several components towards the production of a 50cc linkage-driven air-powered engine using SolidWorks, which achieved over 2000 RPM in steady state operation\nManufacturing aluminum, brass and delrin parts using various machining techniques including water jet cutting, milling, and reaming, and other operations",
             "date": "Fall 2019",
-            "multimedia": [
-                {
-                    "type": "image",
-                    "src": "/img/crab.jpg"
-                },
-                {
-                    "type": "image",
-                    "src": "/img/crab.jpg"
-                }
-            ],
+            "multimedia": [],
             "skills": ["Mechanical design", "SolidWorks", "Machining"]
         },
         {

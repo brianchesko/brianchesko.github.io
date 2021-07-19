@@ -33,6 +33,48 @@ if (bannerWrapper) {
     }, 1000);
 }
 
+const advanceGallery = (galleryElement, index) => {
+    console.log('Advancing gallery to position', index);
+    Array.from(
+        galleryElement.getElementsByClassName('project-multimedia_item')
+    ).forEach((item) => {
+        item.setAttribute('style', `transform: translateX(-${index * 100}%)`);
+    });
+};
+
+const createPortfolioImage = (mediaItem) => {
+    const img = document.createElement('img');
+    img.setAttribute('src', mediaItem.src);
+    return img;
+}
+
+const createPortfolioYoutubeFrame = (mediaItem) => {
+    const frame = document.createElement('iframe');
+    frame.setAttribute('src', mediaItem.src);
+    frame.setAttribute('title', 'Embedded YouTube Player');
+    frame.setAttribute('frameborder', 0);
+    frame.setAttribute('allow', 'clipboard-write; encrypted-media;');
+    frame.setAttribute('allowfullscreen', 'true');
+    return frame;
+}
+
+const createPortfolioVideo = (mediaItem) => {
+    const video = document.createElement('video');
+    const src = mediaItem.src;
+    const srcList = Array.isArray(src) ? src : [src];
+
+    srcList.forEach((srcObj) => {
+        const srcEl = document.createElement('source');
+        srcEl.setAttribute('src', srcObj.src);
+        srcEl.setAttribute('type', srcObj.mime);
+        video.appendChild(srcEl);
+    });
+
+    video.appendChild(document.createTextNode('Your browser does not support video elements.'));
+
+    return video;
+}
+
 const populateProjects = (projects) => {
     const projectMap = {};
 
@@ -72,7 +114,7 @@ const populateProjects = (projects) => {
                     }
                 });
 
-                // TODO: consider the following -- what if instead of adding the description/multimedia at element creation time,
+                // TODO: consider the following -- what if instead of adding the multimedia at element creation time,
                 // we just create them here on expand and destroy them after collapse (or just not create them again)? not sure
                 // if that would be helpful, although would prevent loading of a ton of images at once
 
@@ -160,17 +202,67 @@ const populateProjects = (projects) => {
             description.classList.add('portfolio_project-desc');
             description.innerText = proj.description;
             wrapper.appendChild(description);
-            // TODO: handle line breaks
         }
 
-        /*
         if (proj.multimedia) {
-            const multimedia = document.createElement('p');
-            multimedia.classList.add('portfolio_project-multimedia');
-            // TODO... a lot. figure out how to include images, gallery, links, demos? etc
-            wrapper.appendChild(multimedia);
+            const multimediaWrapper = document.createElement('div');
+            multimediaWrapper.classList.add('project-multimedia_wrapper');
+            const multimediaGallery = document.createElement('span');
+            multimediaGallery.classList.add('project-multimedia_gallery');
+
+            let itemCount = 0;
+            let galleryIndex = 0;
+
+            proj.multimedia.forEach((mediaItem) => {
+                const mediaType = mediaItem.type;
+                let mediaEl;
+                switch (mediaType) {
+                    case 'image':
+                        mediaEl = createPortfolioImage(mediaItem);
+                        break;
+                    case 'youtube':
+                        mediaEl = createPortfolioYoutubeFrame(mediaItem);
+                        break;
+                    case 'video':
+                        mediaEl = createPortfolioVideo(mediaItem);
+                        break;
+                    default:
+                        mediaEl = undefined; // technically redundant, but I prefer to always have a default case
+                        break;
+                }
+                if (mediaEl) {
+                    mediaEl.classList.add('project-multimedia_item');
+                    mediaEl.classList.add(`project-multimedia_item__${mediaType}`);
+                    multimediaGallery.appendChild(mediaEl);
+                    itemCount++;
+                }
+            });
+
+            if (itemCount) {
+                if (itemCount > 1) {
+                    // only if we have several items will we add item traversal buttons
+                    const prevButton = document.createElement('button');
+                    prevButton.classList.add('project-multimedia_button', 'project-multimedia_button__prev');
+                    prevButton.addEventListener('click', () => {
+                        galleryIndex = (galleryIndex - 1 + itemCount) % itemCount;
+                        advanceGallery(multimediaGallery, galleryIndex);
+                    });
+                    multimediaWrapper.appendChild(prevButton);
+                }
+                multimediaWrapper.appendChild(multimediaGallery);
+                if (itemCount > 1) {
+                    const nextButton = document.createElement('button');
+                    nextButton.classList.add('project-multimedia_button', 'project-multimedia_button__next');
+                    nextButton.addEventListener('click', () => {
+                        galleryIndex = (galleryIndex + 1) % itemCount;
+                        advanceGallery(multimediaGallery, galleryIndex);
+                    });
+                    multimediaWrapper.appendChild(nextButton);
+                }
+                // TODO: add support for media captions
+                wrapper.appendChild(multimediaWrapper);
+            }
         }
-        */
 
         // TODO: add relevant technologies to bottom of each project, add in from json
 
