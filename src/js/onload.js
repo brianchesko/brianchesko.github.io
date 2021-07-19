@@ -33,13 +33,34 @@ if (bannerWrapper) {
     }, 1000);
 }
 
-const advanceGallery = (galleryElement, index) => {
+const captionTimeouts = [];
+
+const advanceGallery = (mediaList, galleryElement, index) => {
     console.log('Advancing gallery to position', index);
     Array.from(
         galleryElement.getElementsByClassName('project-multimedia_item')
     ).forEach((item) => {
         item.setAttribute('style', `transform: translateX(-${index * 100}%)`);
     });
+
+    const captionEl = galleryElement.parentElement.getElementsByClassName('project-multimedia_caption')[0];
+    const newCaption = mediaList[index].caption;
+
+    if (captionEl) {
+        captionEl.classList.remove('project-multimedia_caption__active');
+
+        // clear previous captions that will be spawning, in case the user spam clicks
+        captionTimeouts.forEach(id => clearTimeout(id));
+
+        if (newCaption) {
+            captionTimeouts.push(
+                setTimeout(() => {
+                    captionEl.innerText = newCaption;
+                    captionEl.classList.add('project-multimedia_caption__active');
+                }, 350) // wait a duration LONGER than the transition to 0 opacity in the CSS, so that we change when it's hidden
+            );
+        }
+    }
 };
 
 const createPortfolioImage = (mediaItem) => {
@@ -216,8 +237,9 @@ const populateProjects = (projects) => {
             const multimediaGallery = document.createElement('span');
             multimediaGallery.classList.add('project-multimedia_gallery');
 
-            let itemCount = 0;
             let galleryIndex = 0;
+            let captionCount = 0;
+            let addedMedia = [];
 
             proj.multimedia.forEach((mediaItem) => {
                 const mediaType = mediaItem.type;
@@ -239,36 +261,53 @@ const populateProjects = (projects) => {
                         mediaEl = undefined; // technically redundant, but I prefer to always have a default case
                         break;
                 }
+
                 if (mediaEl) {
                     mediaEl.classList.add('project-multimedia_item');
                     mediaEl.classList.add(`project-multimedia_item__${mediaType}`);
                     multimediaGallery.appendChild(mediaEl);
-                    itemCount++;
+                    addedMedia.push(mediaItem);
+
+                    if (mediaItem.caption) {
+                        captionCount++;
+                    }
                 }
             });
+
+            const itemCount = addedMedia.length;
 
             if (itemCount) {
                 if (itemCount > 1) {
                     // only if we have several items will we add item traversal buttons
                     const prevButton = document.createElement('button');
+                    const nextButton = document.createElement('button');
                     prevButton.classList.add('project-multimedia_button', 'project-multimedia_button__prev');
+                    nextButton.classList.add('project-multimedia_button', 'project-multimedia_button__next');
                     prevButton.addEventListener('click', () => {
                         galleryIndex = (galleryIndex - 1 + itemCount) % itemCount;
-                        advanceGallery(multimediaGallery, galleryIndex);
+                        advanceGallery(addedMedia, multimediaGallery, galleryIndex);
                     });
-                    multimediaWrapper.appendChild(prevButton);
-                }
-                multimediaWrapper.appendChild(multimediaGallery);
-                if (itemCount > 1) {
-                    const nextButton = document.createElement('button');
-                    nextButton.classList.add('project-multimedia_button', 'project-multimedia_button__next');
                     nextButton.addEventListener('click', () => {
                         galleryIndex = (galleryIndex + 1) % itemCount;
-                        advanceGallery(multimediaGallery, galleryIndex);
+                        advanceGallery(addedMedia, multimediaGallery, galleryIndex);
                     });
+                    multimediaWrapper.appendChild(prevButton);
                     multimediaWrapper.appendChild(nextButton);
                 }
-                // TODO: add support for media captions
+                
+                multimediaWrapper.appendChild(multimediaGallery);
+
+                // don't bother with a caption element if we'll never see one, but if we can, add one
+                if (captionCount > 0) {
+                    const caption = document.createElement('span');
+                    caption.classList.add('project-multimedia_caption');
+                    if (addedMedia[0].caption) {
+                        caption.classList.add('project-multimedia_caption__active');
+                        caption.innerText = addedMedia[0].caption;
+                    }
+                    multimediaWrapper.appendChild(caption);
+                }
+
                 wrapper.appendChild(multimediaWrapper);
             }
         }
