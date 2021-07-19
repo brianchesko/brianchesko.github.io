@@ -472,6 +472,8 @@ section {
     z-index: 10;
 
     &_wrapper {
+        max-width: 90%;
+        max-height: 90%;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -488,6 +490,10 @@ section {
         justify-content: center;
         align-items: center;
         padding: 2em;
+    }
+
+    &_image {
+        max-width: 90%;
     }
 
     &_caption {
