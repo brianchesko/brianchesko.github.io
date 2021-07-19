@@ -5,7 +5,13 @@
             "name": "Reciprocating Air Engine",
             "description": "Designed and modeled several components towards the production of a 50cc linkage-driven air-powered engine using SolidWorks, which achieved over 2000 RPM in steady state operation\nManufacturing aluminum, brass and delrin parts using various machining techniques including water jet cutting, milling, and reaming, and other operations",
             "date": "Fall 2019",
-            "multimedia": [],
+            "multimedia": [
+                {
+                    "type": "youtube",
+                    "src": "https://www.youtube.com/embed/taXBt2NV-f4",
+                    "caption": "Video of one of the air engine speed tests, running a no-load condition. We hit about 2100 RPM here."
+                }
+            ],
             "skills": ["Mechanical design", "SolidWorks", "Machining"]
         },
         {
@@ -13,6 +19,13 @@
             "name": "Deep-Q Reinforcement Learning towards Playing Snake",
             "date": "Fall 2019",
             "description": "Developed a multithreaded, highly configurable Python implementation of Snake from scratch\nCreated and trained a Deep Q-Network reinforcement learning agent to play game using Keras-RL, TensorFlow and OpenAI Gym with near human-level accuracy",
+            "multimedia": [
+                {
+                    "type": "pdf",
+                    "src": "./snake_rl_poster.pdf",
+                    "caption": "Poster presented during Engineering Clinic presentations, summarizing the project and research."
+                }
+            ],
             "skills": ["Machine learning", "Reinforcement learning", "Python", "Keras-RL"]
         },
         {
@@ -20,7 +33,59 @@
             "name": "SolidWorks Flow Sim Car Body CFD Optimization",
             "date": "Spring 2020",
             "description": "Designed the exterior of a model car to maximize downforce and minimize aerodynamic drag\nRan studies using the SolidWorks Flow Simulation toolbox to quantify effects of modifications\nIncorporated components such as wings, vortex generators, and geometries based on fluid flow theory to achieve a lift-to-drag ratio of -3.5",
-            "skills": ["SolidWorks", "CFD", "Flow visualization"]
+            "skills": ["SolidWorks", "CFD", "Flow visualization"],
+            "multimedia": [
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/car-cfd-various-iterations.png",
+                    "caption": "Left column, top-to-bottom: models of iterations 10, 20, and 30. Right column, top-to-bottom: models of iterations 40, 50, and 60. "
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/final_car-isometric.png",
+                    "caption": "A front isometric view of the finished stylized car design."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/final-car-front.png",
+                    "caption": "A front view of the car."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/dimensioned-side.png",
+                    "caption": "A side semi-transparent view of the car and its internals with associated dimensions."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/pressure-front-iso.png",
+                    "caption": "Pressures on the surface of the car from the front isometric viewpoint. Red corresponds to the highest pressures of 14.89 psi and above and blue corresponds to the lowest pressures of 14.16 psi and below."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/pressure-top.png",
+                    "caption": "Pressures on the top surface of the car, using the same high and low pressure values as in the isometric figure."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/pressure-bottom.png",
+                    "caption": "Pressures on the underbody of the car, using the same high and low pressure values as in the previous figures."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/air-velocity-cut.png",
+                    "caption": "Air velocities along the centerline of the car on the X-Y axis. Red represents the highest air speeds above 301 ft/s (205 mph) and blue represents stagnant air. For clarity, the main body of the car is hidden."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/downforce-plot.png",
+                    "caption": "Plot of downforce (negative of lift) in red and drag in blue at various vehicle velocities, according to SolidWorks Flow Simmulation parametric testing."
+                },
+                {
+                    "type": "image",
+                    "src": "./img/car-cfd/drag-power-plot.png",
+                    "caption": "Plot of drag power at various vehicle velocities."
+                }
+            ]
         },
         {
             "id": "snakey-bakey",
@@ -54,7 +119,7 @@
             "id": "personal-webpage",
             "name": "Personal Webpage",
             "date": "Spring 2021",
-            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and toggling elements using JavaScript. Specific resume line items are loaded in via a JSON file that may be hot-swapped at any time just by editing an item.",
+            "description": "You're looking at it! This is a simple webpage written in vanilla HTML, JavaScript ES6, and (S)CSS.\nCode for this site is available on my GitHub. All animations performed using pure CSS transitions and JavaScript. Specific resume line items are loaded in via a JSON file that may be hot-swapped at any time just by editing an item.",
             "skills": ["HTML", "CSS", "JavaScript", "Design"]
         }
     ],

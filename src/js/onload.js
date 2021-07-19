@@ -58,6 +58,12 @@ const createPortfolioYoutubeFrame = (mediaItem) => {
     return frame;
 }
 
+const createPortfolioPdf = (mediaItem) => {
+    const frame = document.createElement('iframe');
+    frame.setAttribute('src', mediaItem.src);
+    return frame;
+}
+
 const createPortfolioVideo = (mediaItem) => {
     const video = document.createElement('video');
     const src = mediaItem.src;
@@ -225,6 +231,9 @@ const populateProjects = (projects) => {
                         break;
                     case 'video':
                         mediaEl = createPortfolioVideo(mediaItem);
+                        break;
+                    case 'pdf':
+                        mediaEl = createPortfolioPdf(mediaItem);
                         break;
                     default:
                         mediaEl = undefined; // technically redundant, but I prefer to always have a default case
