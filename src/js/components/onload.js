@@ -54,6 +54,19 @@ const setModalImage = (mediaItem) => {
     }
 };
 
+const getCaption = (mediaList, index) => {
+    const rawCaption = mediaList[index].caption;
+    const showIndex = mediaList.length > 1;
+
+    if (rawCaption || showIndex) {
+        const captionNumber = `${index + 1}/${mediaList.length}`;
+        const prefix = (rawCaption ? '(' : '') + captionNumber + (rawCaption ? ')' : '');
+        return [showIndex && prefix, rawCaption].filter(x => x).join(' ');
+    } else {
+        return undefined;
+    }
+}
+
 const advanceGallery = (mediaList, galleryElement, index) => {
     console.log('Advancing gallery to position', index);
     Array.from(
@@ -63,22 +76,18 @@ const advanceGallery = (mediaList, galleryElement, index) => {
     });
 
     const captionEl = galleryElement.parentElement.getElementsByClassName('project-multimedia_caption')[0];
-    const newCaption = mediaList[index].caption;
 
     if (captionEl) {
         captionEl.classList.remove('project-multimedia_caption__active');
 
         // clear previous captions that will be spawning, in case the user spam clicks
         captionTimeouts.forEach(id => clearTimeout(id));
-
-        if (newCaption) {
-            captionTimeouts.push(
-                setTimeout(() => {
-                    captionEl.innerText = newCaption;
-                    captionEl.classList.add('project-multimedia_caption__active');
-                }, 350) // wait a duration LONGER than the transition to 0 opacity in the CSS, so that we change when it's hidden
-            );
-        }
+        captionTimeouts.push(
+            setTimeout(() => {
+                captionEl.innerText = getCaption(mediaList, index);
+                captionEl.classList.add('project-multimedia_caption__active');
+            }, 350) // wait a duration LONGER than the transition to 0 opacity in the CSS, so that we change when it's hidden
+        );
     }
 };
 
@@ -137,8 +146,14 @@ const expandProject = (projectId) => {
 
     // dynamically set the max height to what it wants to be, fixes awkward animation timing mismatch
     // for collapse vs expand when the heights are very small
+    //
+    // TODO: the calc is a cheeky hack to fix the fact that some captions may take up more lines than the first
+    // caption loaded does, which means that the scroll height only guarantees the box will be big enough to fully
+    // fit the first caption. this pads an additional couple lines on top. a more technically correct fix
+    // would be to test all captions to see which one will be rendered with the most lines, but that would slow down
+    // loading (probably not much with a site this small, but it's still poor design and this hack works fine)
     const contentEl = projectWrapper.getElementsByClassName('portfolio_project-content')[0];
-    contentEl.style.maxHeight = contentEl.scrollHeight + 'px';
+    contentEl.style.maxHeight = `calc(${contentEl.scrollHeight}px + 5em)`; 
 
     // this should never fail unless someone messed with the DOM
     const arrow = projectWrapper.getElementsByClassName('portfolio_project-expand-collapse-arrow')[0];
@@ -371,9 +386,10 @@ const populateProjects = (projects, skillGroups) => {
                 if (captionCount > 0) {
                     const caption = document.createElement('span');
                     caption.classList.add('project-multimedia_caption');
-                    if (addedMedia[0].caption) {
+                    const captionText = getCaption(addedMedia, 0);
+                    if (captionText) {
                         caption.classList.add('project-multimedia_caption__active');
-                        caption.innerText = addedMedia[0].caption;
+                        caption.innerText = captionText;
                     }
                     multimediaWrapper.appendChild(caption);
                 }

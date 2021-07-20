@@ -140,7 +140,7 @@
             "id": "ball-and-beam",
             "name": "Modeling and Control of Ball and Beam System",
             "date": "Fall 2020 – Spring 2021",
-            "description": "Modeled an implementation of a ball-and-beam system with 14” track using SolidWorks upon which a ball can roll lengthwise with desired equilibrium ball position input fed via Arduino\nComputed governing equations using dynamics analysis\nImplemented and tuned PID control system within MATLAB Simulink according to minimize response time and overshoot\nPlotted theoretical ball position versus time for desired ball position inputs",
+            "description": "Modeled an implementation of a ball-and-beam system with 14” track using SolidWorks upon which a ball can roll lengthwise with desired equilibrium ball position input fed via Arduino\nComputed governing equations using dynamics analysis\nImplemented and tuned PID control system within MATLAB Simulink to minimize response time and overshoot\nPlotted theoretical ball position versus time for desired ball position inputs",
             "skills": ["Control systems", "MATLAB", "Simulink", "SolidWorks"],
             "multimedia": [
                 {

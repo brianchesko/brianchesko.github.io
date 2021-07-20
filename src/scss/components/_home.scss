@@ -286,7 +286,7 @@ section {
         &-content {
             max-height: 0;
             transition: max-height 1s ease;
-            overflow: hidden;
+            // overflow: hidden;
 
             &:first-child {
                 margin-top: 0;
