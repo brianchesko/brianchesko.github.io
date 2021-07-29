@@ -1,5 +1,6 @@
 #!/bin/bash
 cd dist
+echo "brianchesko.com" > CNAME
 rm -rf .git
 git init
 git add .
