@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Brian Chesko</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<header>
+		<nav id="nav_wrapper">
+			<a id="nav_logo" href="/" class="nav_link nav_link__internal">BC</a>
+			<ul class="nav_list">
+				<li class="nav_list-item">
+					<a class="nav_link nav_link__internal" href="#">Home</a>
+				</li>
+				<li class="nav_list-item">
+					<a class="nav_link nav_link__external" href="https://github.com/brianchesko">
+						<img class="ext-icon" src="./svg/external-link.svg">
+						GitHub
+					</a>
+				</li>
+				<li class="nav_list-item">
+					<a class="nav_link nav_link__external" href="https://www.linkedin.com/in/brian-chesko/">
+						<img class="ext-icon" src="./svg/external-link.svg">
+						LinkedIn
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section id="banner_wrapper">
+			<img id="banner_image1" class="banner_image banner_image__active" src="./img/grad-stair-gradient.jpg" alt="Heading banner" />
+			<img id="banner_image2" class="banner_image" />
+			<h1 id="banner_heading">Brian Chesko</h1>
+		</section>
+
+		<section id="toc_wrapper" class="main-content">
+			<div id="toc_box">
+				<h2 id="toc_descriptor">Jump to section</h2>
+				<ol id="toc_top-list" class="toc_list">
+					<li class="toc_list-item"><a href="#about-me">About me</a></li>
+					<li class="toc_list-item"><a href="#resume">Resume</a></li>
+					<ul class="toc_list">
+						<li class="toc_list-item"><a href="#education">Education</a></li>
+						<ul class="toc_list">
+							<li class="toc_list-item"><a href="#coursework">Coursework</a></li>
+							<li class="toc_list-item"><a href="#honors">Honors + awards</a></li>
+						</ul>
+						<li class="toc_list-item"><a href="#internships">Internship experiences</a></li>
+						<li class="toc_list-item"><a href="#work">Work experiences</a></li>
+						<li class="toc_list-item"><a href="#certifications">Certifications</a></li>
+					</ul>
+					<li class="toc_list-item"><a href="#portfolio">Portfolio</a></li>
+				</ol>
+			</div>
+		</section>
+
+		<section id="about-me-wrapper" class="main-content">
+			<h1 id="about-me">
+				<a href="#about-me" class="heading-link link__internal">
+					About me
+				</a>
+			</h1>
+			<p>
+				Hey there! Welcome, I'm Brian :)
+				I made this site as a more personalized place for me to store my credentials
+				and showcase some portfolio items.
+			</p>
+			<p>
+				I recently graduated from Rowan University with degrees in MechE and Computer Science
+				and am currently looking for a full-time position to put those skills to use. Though I'm
+				open to many kinds of work at the moment, I'd love to work in the aero/astronautics industries,
+				preferably relating to design and analysis of propulsion systems.
+			</p>
+			<p>
+				My contact information can be found in the PDF version of my resume (just click the
+				button below!) or you can send me a message on LinkedIn —— I check them all pretty
+				regularly.
+			</p>
+		</section>
+
+		<section id="resume_wrapper" class="main-content">
+			<div id="resume">
+				<h1 id="resume-header">
+					<a href="#resume" class="heading-link link__internal">
+						Resume
+					</a>
+					<button id="resume-header_download-button" type="button">
+						<a id="resume-header_download-anchor" href="brian_chesko_complete_resume.pdf" target="_blank">
+							Download as PDF
+						</a>
+					</button>
+				</h1>
+			</div>
+
+			<div class="resume_section" id="education">
+				<h2>
+					<a href="#education" class="heading-link link__internal">
+						Education
+					</a>
+				</h2>
+				<h3 id="school-name">Rowan University</h3>
+				<div class="resume-line degree-line">
+					<div class="resume-line_degree-names">
+						<p>Bachelor of Science, Mechanical Engineering</p>
+						<p>Bachelor of Science, Computer Science</p>
+					</div>
+					<p class="resume-line_degree-date">May 2021, Summa Cum Laude</p>
+				</div>
+	
+				<div id="honors">
+					<h4 id="honors-heading">Honors + awards</h4>
+					<div class="resume-line honor-wrapper">
+						<div class="resume-line_honor-title">
+							<p>2021 Computer Science Outstanding Senior Award</p>
+							<p>
+								Awarded to one student in the graduating class for outstanding academic
+								achievement and contributions to the university and community over the course of study
+							</p>
+						</div>
+						<p class="resume-line_honor-date">Spring 2021</p>
+					</div>
+					<div class="resume-line honor-wrapper">
+						<p class="resume-line_honor-title">President's Scholar Award (GPA of 4.0)</p>
+						<p class="resume-line_honor-date">Fall 2017/2018/2019/2020, Spring 2020/2021</p>
+					</div>
+					<div class="resume-line honor-wrapper">
+						<p class="resume-line_honor-title">Dean's List Recipient (GPA of 3.45+)</p>
+						<p class="resume-line_honor-date">Spring 2018/2019</p>
+					</div>
+				</div>
+	
+				<div id="coursework">
+					<h4>Coursework <button id="coursework_show-btn">show</button></h4>
+					<ul id="coursework_list">
+						<p class="coursework_subject">Engineering</p>
+						<li class="coursework_course">Thermal-Fluid Sciences I, II</li>
+						<li class="coursework_course">Quality & Reliability in Engineering</li>
+						<li class="coursework_course">Machine Design</li>
+						<li class="coursework_course">Strength of Materials</li>
+						<li class="coursework_course">Statics/Dynamics</li>
+						<li class="coursework_course">Introduction to Nanotechnology</li>
+						<li class="coursework_course">System Dynamics and Controls</li>
+						<li class="coursework_course">Finite Element Analysis</li>
+						<li class="coursework_course">Introduction to Aerospace Propulsion</li>
+						<li class="coursework_course">Introduction to Mechanical Vibrations</li>
+						<li class="coursework_course">Introduction to Flight Dynamics</li>
+						<p class="coursework_subject">Computer Science</p>
+						<li class="coursework_course">Data Structures & Algorithms</li>
+						<li class="coursework_course">Design and Analysis of Algorithms</li>
+						<li class="coursework_course">Computer Vision</li>
+						<li class="coursework_course">Computer Organization</li>
+						<li class="coursework_course">Operating Systems</li>
+						<li class="coursework_course">Introduction to Machine Learning</li>
+						<li class="coursework_course">Databases Systems</li>
+						<li class="coursework_course">Advanced Android Programming</li>
+						<li class="coursework_course">Software Engineering</li>
+						<p class="coursework_subject">Mathematics</p>
+						<li class="coursework_course">Calculus III</li>
+						<li class="coursework_course">Ordinary Differential Equations</li>
+						<li class="coursework_course">Linear Algebra</li>
+						<li class="coursework_course">Probability and Random Variables</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Individual internship items loaded in via JS -->
+			<div class="resume_section" id="internships">
+				<h2>
+					<a href="#internships" class="heading-link link__internal">
+						Internship experiences
+					</a>
+				</h2>
+				<div id="resume-internship-placeholder" class="resume-line">
+					<div class="resume-line_title">
+						<h3>Positions loading...</h3>
+					</div>
+				</div>
+			</div>
+
+			<!-- Individual job items loaded in via JS -->
+			<div class="resume_section" id="work">
+				<h2>
+					<a href="#work" class="heading-link link__internal">
+						Work experiences
+					</a>
+				</h2>
+				<div id="resume-work-placeholder" class="resume-line">
+					<div class="resume-line_title">
+						<h3>Positions loading...</h3>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="resume_section" id="certifications">
+				<h2>
+					<a href="#certifications" class="heading-link link__internal">
+						Certifications
+					</a>
+				</h2>
+				<div id="certification_all-wrapper">
+					<div class="resume-line certification_cert-wrapper">
+						<p class="certification_cert-title">Certified SolidWorks Professional (CSWP), Mechanical Design</p>
+						<p class="certification_cert-date">July 2020</p>
+					</div>
+					<div class="resume-line certification_cert-wrapper">
+						<p class="certification_cert-title">Certified SolidWorks Associate (CSWA), Mechanical Design</p>
+						<p class="certification_cert-date">December 2019</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="portfolio" class="main-content">
+			<h1>
+				<a href="#portfolio" class="heading-link link__internal">
+					Portfolio
+				</a>
+			</h1>
+
+			<div id="portfolio_all-projects">
+				<!-- This is built in programmatically! -->
+				<div id="portfolio_placeholder" class="portfolio_project-wrapper">
+					<h3 class="portfolio_project-heading">Loading projects...</h2>
+				</div>
+			</div>
+		</section>
+
+		<div id="image-modal" class="image-modal">
+			<div class="image-modal_wrapper">
+				<div class="image-modal_content">
+					<img id="image-modal_image" class="image-modal_image" src="">
+					<p id="image-modal_caption" class="image-modal_caption"></p>
+				</div>
+				<button id="image-modal_close-button" class="image-modal_close-button" type="button">
+				</button>
+			</div>
+		</div>
+	</main>
+
+	<!-- Scripts -->
+	<script src="js/main.js"></script>
+</body>
+</html>
