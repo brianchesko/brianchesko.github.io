@@ -198,7 +198,7 @@
             "position": "Electrified Propulsion Project Intern",
             "location": "Cleveland, OH",
             "company": "NASA Glenn Research Center",
-            "description": "Created 3d printed models and circuit models for use in lab testing set-up including Altium schematic and PCB designs and SolidWorks models\nDeveloped Simulink simulation elements towards an efficient real-time implementation of a high-lift motor controller system\nProduced mechanical drawings for fabrication of aerospace hardware test setup required to resist large vibrational forces according to GD&T (ASME Y14.5) standards",
+            "description": "Created SolidWorks 3d printed models and Altium circuit schematic and PCB models for use in hardware-in-the-loop (HIL) avionics instrument panel lab testing setup\nDeveloped Simulink simulation elements towards an efficient real-time implementation of a high-lift motor controller system\nProduced mechanical drawings for fabrication of aerospace hardware test setup required to resist large vibrational forces according to GD&T (ASME Y14.5) standards",
             "date": "June 2020 – Aug. 2020"
         },
         {
