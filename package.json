@@ -15,7 +15,7 @@
         "copy": "recursive-copy src/copy dist",
         "img": "recursive-copy src/img dist/img",
         "js": "recursive-copy src/js dist/js",
-        "build": "npm run clean && mkdir dist && npm run css && npm run copy && npm run img && npm run js",
+        "build": "npm run clean && mkdir dist && npm run css && npm run compile-resume && npm run copy && npm run img && npm run js",
         "watch-css": "sass src/scss/main.scss dist/css/main.css --watch",
         "serve": "serve dist"
     },
