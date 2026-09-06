@@ -11,13 +11,13 @@
     "scripts": {
         "clean": "recursive-delete dist",
         "css": "sass src/scss/main.scss dist/css/main.css",
+        "compile-resume": "uvx --from weasyprint==69.0 weasyprint src/resume/resume.html src/copy/brian_chesko_complete_resume.pdf",
         "copy": "recursive-copy src/copy dist",
         "img": "recursive-copy src/img dist/img",
         "js": "recursive-copy src/js dist/js",
         "build": "npm run clean && mkdir dist && npm run css && npm run copy && npm run img && npm run js",
         "watch-css": "sass src/scss/main.scss dist/css/main.css --watch",
-        "serve": "serve dist",
-        "compile-resume": "uvx --from weasyprint==69.0 weasyprint src/resume/resume.html src/copy/brian_chesko_complete_resume.pdf"
+        "serve": "serve dist"
     },
     "devDependencies": {
         "recursive-fs": "^2.1.0",
