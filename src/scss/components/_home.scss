@@ -148,17 +148,35 @@ $content-max: 780px;
 
 .role-row {
 	display: grid;
-	grid-template-columns: 120px minmax(0, 1fr) 84px;
+	grid-template-columns: 134px minmax(0, 1fr) 84px;
 	gap: 8px 22px;
 	padding: 16px 0;
 	border-top: 1px solid var(--border);
+	cursor: pointer;
 
 	&:hover {
 		background: var(--bg-subtle);
 	}
 
+	&:focus-visible {
+		outline: 1px solid var(--accent);
+		outline-offset: -1px;
+	}
+
 	&:last-child {
 		border-bottom: 1px solid var(--border);
+	}
+
+	&_lead {
+		display: flex;
+		align-items: baseline;
+		gap: 10px;
+	}
+
+	&_marker {
+		color: var(--accent);
+		font-size: 12px;
+		width: 10px;
 	}
 
 	&_period {
@@ -170,6 +188,28 @@ $content-max: 780px;
 		color: var(--text-muted);
 		font-size: 12.5px;
 		margin-top: 4px;
+	}
+
+	&_detail {
+		display: none;
+		flex-direction: column;
+		gap: 11px;
+		margin: 4px 0 0;
+		padding: 0;
+		list-style: none;
+		font-size: 12.5px;
+		line-height: 1.7;
+		color: var(--text-muted);
+	}
+
+	&.is-open {
+		.role-row_desc {
+			display: none;
+		}
+
+		.role-row_detail {
+			display: flex;
+		}
 	}
 
 	&_company {
