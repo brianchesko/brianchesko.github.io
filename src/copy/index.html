@@ -1,250 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Brian Chesko</title>
+	<meta name="description" content="Brian Chesko — Ground Software Engineer, Lead at Relativity Space. C++ and Go for systems that run rocket engine tests.">
+	<script>
+		(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var theme = (stored === 'light' || stored === 'dark')
+					? stored
+					: (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+				document.documentElement.setAttribute('data-theme', theme);
+			} catch (e) {}
+		})();
+	</script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<header>
-		<nav id="nav_wrapper">
-			<a id="nav_logo" href="/" class="nav_link nav_link__internal">BC</a>
-			<ul class="nav_list">
-				<li class="nav_list-item">
-					<a class="nav_link nav_link__internal" href="#">Home</a>
-				</li>
-				<li class="nav_list-item">
-					<a class="nav_link nav_link__external" href="https://github.com/brianchesko">
-						<img class="ext-icon" src="./svg/external-link.svg">
-						GitHub
-					</a>
-				</li>
-				<li class="nav_list-item">
-					<a class="nav_link nav_link__external" href="https://www.linkedin.com/in/brian-chesko/">
-						<img class="ext-icon" src="./svg/external-link.svg">
-						LinkedIn
-					</a>
-				</li>
-			</ul>
+	<header id="site-header">
+		<span class="brand">brian a. chesko</span>
+		<nav class="site-nav">
+			<div class="theme-toggle" role="group" aria-label="Color theme">
+				<button type="button" class="theme-toggle_btn" data-theme-value="light" aria-pressed="false">sun</button>
+				<button type="button" class="theme-toggle_btn" data-theme-value="dark" aria-pressed="false">moon</button>
+			</div>
+			<a class="site-nav_link" href="brian_chesko_complete_resume.pdf" target="_blank" rel="noopener">resume.pdf</a>
+			<a class="site-nav_link" href="https://github.com/brianchesko" target="_blank" rel="noopener">github ↗</a>
+			<a class="site-nav_link" href="https://www.linkedin.com/in/brian-chesko/" target="_blank" rel="noopener">linkedin ↗</a>
 		</nav>
 	</header>
 
 	<main>
-		<section id="banner_wrapper">
-			<img id="banner_image1" class="banner_image banner_image__active" src="./img/grad-stair-gradient.jpg" alt="Heading banner" />
-			<img id="banner_image2" class="banner_image" />
-			<h1 id="banner_heading">Brian Chesko</h1>
-		</section>
-
-		<section id="toc_wrapper" class="main-content">
-			<div id="toc_box">
-				<h2 id="toc_descriptor">Jump to section</h2>
-				<ol id="toc_top-list" class="toc_list">
-					<li class="toc_list-item"><a href="#about-me">About me</a></li>
-					<li class="toc_list-item"><a href="#resume">Resume</a></li>
-					<ul class="toc_list">
-						<li class="toc_list-item"><a href="#education">Education</a></li>
-						<ul class="toc_list">
-							<li class="toc_list-item"><a href="#coursework">Coursework</a></li>
-							<li class="toc_list-item"><a href="#honors">Honors + awards</a></li>
-						</ul>
-						<li class="toc_list-item"><a href="#internships">Internship experiences</a></li>
-						<li class="toc_list-item"><a href="#work">Work experiences</a></li>
-						<li class="toc_list-item"><a href="#certifications">Certifications</a></li>
-					</ul>
-					<li class="toc_list-item"><a href="#portfolio">Portfolio</a></li>
-				</ol>
+		<section class="hero">
+			<div class="hero_eyebrow">ground software engineer, lead — relativity space</div>
+			<h1 class="hero_heading">C++ and Go for systems that run rocket engine tests.</h1>
+			<div class="hero_meta">
+				<span>new orleans, la</span>
+				<span class="hero_meta-sep">/</span>
+				<a href="mailto:cheskobrian@gmail.com" class="accent-link">cheskobrian@gmail.com</a>
 			</div>
 		</section>
 
-		<section id="about-me-wrapper" class="main-content">
-			<h1 id="about-me">
-				<a href="#about-me" class="heading-link link__internal">
-					About me
-				</a>
-			</h1>
-			<p>
-				Hey there! Welcome, I'm Brian :)
-				I made this site as a more personalized place for me to store my credentials
-				and showcase some portfolio items.
-			</p>
-			<p>
-				I recently graduated from Rowan University with degrees in MechE and Computer Science
-				and am currently looking for a full-time position to put those skills to use. Though I'm
-				open to many kinds of work at the moment, I'd love to work in the aero/astronautics industries,
-				preferably relating to design and analysis of propulsion systems.
-			</p>
-			<p>
-				My contact information can be found in the PDF version of my resume (just click the
-				button below!) or you can send me a message on LinkedIn —— I check them all pretty
-				regularly.
-			</p>
+		<section class="page-section" id="interests">
+			<div class="page-section_label">00 / interests</div>
+			<div class="tag-list">
+				<span class="tag">low-latency c++</span>
+				<span class="tag">go</span>
+				<span class="tag">bazel</span>
+				<span class="tag">ownership</span>
+				<span class="tag">hard problems</span>
+			</div>
 		</section>
 
-		<section id="resume_wrapper" class="main-content">
-			<div id="resume">
-				<h1 id="resume-header">
-					<a href="#resume" class="heading-link link__internal">
-						Resume
-					</a>
-					<button id="resume-header_download-button" type="button">
-						<a id="resume-header_download-anchor" href="brian_chesko_complete_resume.pdf" target="_blank">
-							Download as PDF
-						</a>
-					</button>
-				</h1>
-			</div>
-
-			<div class="resume_section" id="education">
-				<h2>
-					<a href="#education" class="heading-link link__internal">
-						Education
-					</a>
-				</h2>
-				<h3 id="school-name">Rowan University</h3>
-				<div class="resume-line degree-line">
-					<div class="resume-line_degree-names">
-						<p>Bachelor of Science, Mechanical Engineering</p>
-						<p>Bachelor of Science, Computer Science</p>
+		<section class="page-section" id="work">
+			<div class="page-section_label">01 / work</div>
+			<div class="role-list">
+				<div class="role-row">
+					<span class="role-row_period">2026 —</span>
+					<div class="role-row_body">
+						<div class="role-row_title">Ground Software Engineer, Lead</div>
+						<div class="role-row_desc">Leads the full-stack Platform group; 4 reports, still shipping.</div>
 					</div>
-					<p class="resume-line_degree-date">May 2021, Summa Cum Laude</p>
+					<span class="role-row_company">Relativity</span>
 				</div>
-	
-				<div id="honors">
-					<h4 id="honors-heading">Honors + awards</h4>
-					<div class="resume-line honor-wrapper">
-						<div class="resume-line_honor-title">
-							<p>2021 Computer Science Outstanding Senior Award</p>
-							<p>
-								Awarded to one student in the graduating class for outstanding academic
-								achievement and contributions to the university and community over the course of study
-							</p>
-						</div>
-						<p class="resume-line_honor-date">Spring 2021</p>
+				<div class="role-row">
+					<span class="role-row_period">2024 — 2026</span>
+					<div class="role-row_body">
+						<div class="role-row_title">Senior Ground Software Engineer</div>
+						<div class="role-row_desc">Sub-millisecond C++23 control services. Kubernetes IaC across 20+ environments. Bazel + GitLab CI, 20 min → 5.</div>
 					</div>
-					<div class="resume-line honor-wrapper">
-						<p class="resume-line_honor-title">President's Scholar Award (GPA of 4.0)</p>
-						<p class="resume-line_honor-date">Fall 2017/2018/2019/2020, Spring 2020/2021</p>
-					</div>
-					<div class="resume-line honor-wrapper">
-						<p class="resume-line_honor-title">Dean's List Recipient (GPA of 3.45+)</p>
-						<p class="resume-line_honor-date">Spring 2018/2019</p>
-					</div>
+					<span class="role-row_company">Relativity</span>
 				</div>
-	
-				<div id="coursework">
-					<h4>Coursework <button id="coursework_show-btn">show</button></h4>
-					<ul id="coursework_list">
-						<p class="coursework_subject">Engineering</p>
-						<li class="coursework_course">Thermal-Fluid Sciences I, II</li>
-						<li class="coursework_course">Quality & Reliability in Engineering</li>
-						<li class="coursework_course">Machine Design</li>
-						<li class="coursework_course">Strength of Materials</li>
-						<li class="coursework_course">Statics/Dynamics</li>
-						<li class="coursework_course">Introduction to Nanotechnology</li>
-						<li class="coursework_course">System Dynamics and Controls</li>
-						<li class="coursework_course">Finite Element Analysis</li>
-						<li class="coursework_course">Introduction to Aerospace Propulsion</li>
-						<li class="coursework_course">Introduction to Mechanical Vibrations</li>
-						<li class="coursework_course">Introduction to Flight Dynamics</li>
-						<p class="coursework_subject">Computer Science</p>
-						<li class="coursework_course">Data Structures & Algorithms</li>
-						<li class="coursework_course">Design and Analysis of Algorithms</li>
-						<li class="coursework_course">Computer Vision</li>
-						<li class="coursework_course">Computer Organization</li>
-						<li class="coursework_course">Operating Systems</li>
-						<li class="coursework_course">Introduction to Machine Learning</li>
-						<li class="coursework_course">Databases Systems</li>
-						<li class="coursework_course">Advanced Android Programming</li>
-						<li class="coursework_course">Software Engineering</li>
-						<p class="coursework_subject">Mathematics</p>
-						<li class="coursework_course">Calculus III</li>
-						<li class="coursework_course">Ordinary Differential Equations</li>
-						<li class="coursework_course">Linear Algebra</li>
-						<li class="coursework_course">Probability and Random Variables</li>
-					</ul>
+				<div class="role-row">
+					<span class="role-row_period">2023 — 2024</span>
+					<div class="role-row_body">
+						<div class="role-row_title">Ground Software Engineer II</div>
+						<div class="role-row_desc">Internal PaaS for 100+ bare-metal hosts, end to end: Go, gRPC, Helm, React/TypeScript.</div>
+					</div>
+					<span class="role-row_company">Relativity</span>
+				</div>
+				<div class="role-row">
+					<span class="role-row_period">2021 — 2023</span>
+					<div class="role-row_body">
+						<div class="role-row_title">Ground Software Engineer I</div>
+						<div class="role-row_desc">Operator tooling in Ignition SCADA; live support through test and launch ops.</div>
+					</div>
+					<span class="role-row_company">Relativity</span>
 				</div>
 			</div>
+			<div class="page-section_footnote">full detail → <a href="brian_chesko_complete_resume.pdf" target="_blank" rel="noopener" class="accent-link">resume.pdf</a></div>
+		</section>
 
-			<!-- Individual internship items loaded in via JS -->
-			<div class="resume_section" id="internships">
-				<h2>
-					<a href="#internships" class="heading-link link__internal">
-						Internship experiences
-					</a>
-				</h2>
-				<div id="resume-internship-placeholder" class="resume-line">
-					<div class="resume-line_title">
-						<h3>Positions loading...</h3>
+		<section class="page-section" id="before">
+			<div class="page-section_label">02 / before</div>
+			<div class="role-list">
+				<div class="role-row">
+					<span class="role-row_period">2020</span>
+					<div class="role-row_body">
+						<div class="role-row_title">NASA Glenn Research Center</div>
+						<div class="role-row_desc">SWE intern, electrified aircraft propulsion.</div>
 					</div>
+					<span class="role-row_company">intern</span>
 				</div>
-			</div>
-
-			<!-- Individual job items loaded in via JS -->
-			<div class="resume_section" id="work">
-				<h2>
-					<a href="#work" class="heading-link link__internal">
-						Work experiences
-					</a>
-				</h2>
-				<div id="resume-work-placeholder" class="resume-line">
-					<div class="resume-line_title">
-						<h3>Positions loading...</h3>
+				<div class="role-row">
+					<span class="role-row_period">2018, 2019</span>
+					<div class="role-row_body">
+						<div class="role-row_title">Clover Network</div>
+						<div class="role-row_desc">SWE intern, backend then frontend.</div>
 					</div>
+					<span class="role-row_company">intern</span>
 				</div>
-			</div>
-
-			
-			<div class="resume_section" id="certifications">
-				<h2>
-					<a href="#certifications" class="heading-link link__internal">
-						Certifications
-					</a>
-				</h2>
-				<div id="certification_all-wrapper">
-					<div class="resume-line certification_cert-wrapper">
-						<p class="certification_cert-title">Certified SolidWorks Professional (CSWP), Mechanical Design</p>
-						<p class="certification_cert-date">July 2020</p>
+				<div class="role-row">
+					<span class="role-row_period">2021</span>
+					<div class="role-row_body">
+						<div class="role-row_title">Rowan University</div>
+						<div class="role-row_desc">B.S. Computer Science, B.S. Mechanical Engineering. Honors concentration, math minor.</div>
 					</div>
-					<div class="resume-line certification_cert-wrapper">
-						<p class="certification_cert-title">Certified SolidWorks Associate (CSWA), Mechanical Design</p>
-						<p class="certification_cert-date">December 2019</p>
-					</div>
+					<span class="role-row_company">B.S. ×2</span>
 				</div>
 			</div>
 		</section>
 
-		<section id="portfolio" class="main-content">
-			<h1>
-				<a href="#portfolio" class="heading-link link__internal">
-					Portfolio
-				</a>
-			</h1>
-
-			<div id="portfolio_all-projects">
-				<!-- This is built in programmatically! -->
-				<div id="portfolio_placeholder" class="portfolio_project-wrapper">
-					<h3 class="portfolio_project-heading">Loading projects...</h2>
-				</div>
+		<section class="page-section" id="homelab">
+			<div class="page-section_label">03 / homelab</div>
+			<div class="callout">
+				<p>3-node k8s cluster running on refurb SFFs, local OAuth+OIDC, GitOps via Flux, fully reproducible via NixOps down to the disk. same discipline as the day job, lower stakes, considerably worse hardware.</p>
 			</div>
 		</section>
-
-		<div id="image-modal" class="image-modal">
-			<div class="image-modal_wrapper">
-				<div class="image-modal_content">
-					<img id="image-modal_image" class="image-modal_image" src="">
-					<p id="image-modal_caption" class="image-modal_caption"></p>
-				</div>
-				<button id="image-modal_close-button" class="image-modal_close-button" type="button">
-				</button>
-			</div>
-		</div>
 	</main>
 
-	<!-- Scripts -->
+	<footer id="site-footer">
+		<span>cheskobrian@gmail.com</span>
+		<span>new orleans, la</span>
+	</footer>
+
 	<script src="js/main.js"></script>
 </body>
 </html>

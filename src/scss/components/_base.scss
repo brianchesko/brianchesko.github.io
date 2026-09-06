@@ -1,56 +1,67 @@
 /**
  * @section Base Styles
+ * Theme tokens + reset. Dark is the default; :root[data-theme="light"]
+ * overrides. The inline script in <head> sets data-theme before paint.
  */
-$primary: #bec1c7;
-$highlight: #ebedf0;
-$light-accent: #484749;
-$accent: #2f2e30;
-$deep-accent: #232224;
-
-$primary-font-face: 'Roboto', sans-serif;
- 
 :root {
-    --primary: #{$primary};
-    --highlight: #{$highlight};
-    --light-accent: #{$light-accent};
-    --deep-accent: #{$deep-accent};
-    --accent: #{$accent};
-    --primary-font-face: #{$primary-font-face};
+	--bg: #101211;
+	--bg-subtle: #191b19;
+	--text: #e9e7e2;
+	--text-muted: #9c9a94;
+	--border: #2a2c2a;
+	--accent: oklch(0.78 0.13 250);
+	--accent-contrast: #101211;
+	--underline: rgba(233, 231, 226, 0.35);
 
-    color: var(--primary);
-    font-family: var(--primary-font-face);
-    font-weight: 100;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-theme="light"] {
+	--bg: #fbfaf8;
+	--bg-subtle: #f4f1ea;
+	--text: #191817;
+	--text-muted: #5f5d59;
+	--border: #e2dfd8;
+	--accent: oklch(0.5 0.11 150);
+	--accent-contrast: #fbfaf8;
+	--underline: #c9c4b9;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    width: 100%;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-mono);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 1.7;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+h1,
+p {
 	margin: 0;
-	background-color: var(--accent);
 }
 
-section {
-    max-width: 88%;
-	margin: 2em auto;
+a {
+	color: inherit;
 }
 
-h1 {
-    font-weight: 300;
-    font-size: 3rem;
-}
-
-h2 {
-    font-weight: 300;
-    font-size: 2rem;
-}
-
-h3, h4, h5, h6 {
-    font-weight: 200;
-}
-
-input,
-textarea,
-select,
 button {
 	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
-
