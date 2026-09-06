@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@page { size: Letter; margin: 0.5in; }
+body{margin:0}
+a{color:#141414;text-decoration:none}
+
+body, h1, h2, h3, p, ul, li, span {
+  font-family: Archivo, Helvetica, Arial, sans-serif;
+  color: #141414;
+}
+
+.name {
+  font-size: 19pt;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 3px;
+}
+
+.contact-line {
+  font-size: 8.5pt;
+  line-height: 1.455;
+  margin: 0;
+  color: #5a5a56;
+}
+
+header {
+  margin-bottom: 13px;
+}
+
+section {
+  margin-bottom: 13px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+.section-label {
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #5a5a56;
+  margin: 0 0 6px;
+}
+
+.section-label.section-label--tight {
+  margin: 0 0 4px;
+}
+
+.entry {
+  margin-bottom: 11px;
+  break-inside: avoid;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.entry-title {
+  font-size: 10.5pt;
+  font-weight: 600;
+  margin: 0;
+}
+
+.entry-org {
+  font-weight: 400;
+  color: #5a5a56;
+}
+
+.entry-date {
+  font-size: 8.5pt;
+  font-weight: 500;
+  color: #5a5a56;
+  white-space: nowrap;
+}
+
+.entry-body {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin: 2px 0 0;
+}
+
+.entry-list {
+  margin: 3px 0 0;
+  padding-left: 13px;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  list-style-type: square;
+}
+
+.entry-list li {
+  margin-bottom: 3px;
+}
+
+.entry-list li:last-child {
+  margin-bottom: 0;
+}
+
+.summary-text {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.education-section {
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1 class="name">Brian A. Chesko</h1>
+<p class="contact-line">New Orleans, LA (open to relocation) &nbsp;·&nbsp; cheskobrian@gmail.com &nbsp;·&nbsp; 609-658-5032 &nbsp;·&nbsp; brianchesko.dev &nbsp;·&nbsp; linkedin.com/in/brian-chesko</p>
+</header>
+
+<section>
+<h2 class="section-label section-label--tight">Summary</h2>
+<p class="summary-text">Infrastructure engineer with 5 years building and operating the distributed systems, deployment tooling, and observability layers that other engineers and operators depend on in safety-critical production environments. Track record of turning fast-moving, user-driven requirements into reliable production infrastructure (Go, Python, C++, Kubernetes, gRPC, Bazel), and of debugging performance and correctness issues across unfamiliar parts of the stack under real operational pressure.</p>
+</section>
+
+<section>
+<h2 class="section-label">Professional Experience</h2>
+
+<div class="entry">
+<div class="entry-header">
+<h3 class="entry-title">Ground Software Engineer, Lead <span class="entry-org">— Relativity Space, Stennis Space Center, MS</span></h3>
+<span class="entry-date">Apr 2026 – Present</span>
+</div>
+<ul class="entry-list">
+<li><strong>Platform leadership:</strong> Lead the full-stack Platform group (4 direct reports) that owns the tooling, deployment infrastructure, and system-management layer 100+ engineers and operators depend on within a safety-critical control software environment</li>
+<li><strong>Go/gRPC services:</strong> Rescoped and shipped an MVP Go/gRPC overhaul of a configuration deployment and state-management service in 4 weeks after direct user interviews surfaced it as a high-priority unmet need, then iterated it to full production delivery</li>
+<li>Own roadmap and mentor 4 direct reports while continuing hands-on IC work across the platform</li>
+</ul>
+</div>
+
+<div class="entry">
+<div class="entry-header">
+<h3 class="entry-title">Senior Ground Software Engineer <span class="entry-org">— Relativity Space, Stennis Space Center, MS</span></h3>
+<span class="entry-date">Dec 2024 – Apr 2026</span>
+</div>
+<ul class="entry-list">
+<li>Built and operated full-stack, low-latency Linux data acquisition and control services on a distributed pub/sub architecture (C++23, DDS), achieving sub-millisecond control authority in a production, safety-critical system</li>
+<li>Co-owned Kubernetes deployment infrastructure-as-code across 20+ independent production environments; migrated critical services to enable automatic restarts, controlled rollouts, and improved reliability</li>
+<li><strong>Developer tooling:</strong> Built developer CLI and pipeline tooling (Go, Python, Bash) — from one-off scripts to fully representative local deployment environments — to shorten the iteration loop for engineers building on the platform</li>
+<li><strong>CI/build systems:</strong> Designed and shipped a Bazel-based configuration framework (Starlark rules/macros/providers) used by 100+ semi-technical operators as a dependency, and re-architected CI pipelines (GitLab CI, GoogleTest, Pytest), cutting median pipeline time from 20 to 5 minutes</li>
+</ul>
+</div>
+
+<div class="entry">
+<div class="entry-header">
+<h3 class="entry-title">Ground Software Engineer II <span class="entry-org">— Relativity Space, Stennis Space Center, MS</span></h3>
+<span class="entry-date">Feb 2023 – Dec 2024</span>
+</div>
+<ul class="entry-list">
+<li><strong>Internal platform-as-a-service:</strong> Architected and delivered a full-stack internal platform-as-a-service (Go, gRPC, Ansible, Docker, Helm/Kubernetes) for provisioning, configuring, and monitoring 100+ bare-metal hosts and industrial PCs across multiple sites</li>
+<li>Built the full application layer — REST/gRPC APIs, database schemas, and OpenTelemetry observability dashboards — giving 30+ operators correctness checks and visibility into system state at scale</li>
+<li>Refactored a performance-critical C++ service from a blocking multithreaded model to an event-driven (Boost.Asio) architecture, debugging contention issues to improve responsiveness under load</li>
+</ul>
+</div>
+
+<div class="entry">
+<div class="entry-header">
+<h3 class="entry-title">Ground Software Engineer I <span class="entry-org">— Relativity Space, Stennis Space Center, MS</span></h3>
+<span class="entry-date">Oct 2021 – Feb 2023</span>
+</div>
+<ul class="entry-list">
+<li>Built tooling enabling 30+ operators across 3 sites to create custom GUIs in Ignition SCADA and tailor operational workflows to their own needs</li>
+<li>Provided real-time support during high-stakes test and launch operations, diagnosing issues and safely patching live production systems under time pressure</li>
+</ul>
+</div>
+</section>
+
+<section class="education-section">
+<h2 class="section-label">Education</h2>
+<div class="entry-header">
+<h3 class="entry-title">B.S. Computer Science &amp; B.S. Mechanical Engineering <span class="entry-org">— Rowan University, Glassboro, NJ</span></h3>
+<span class="entry-date">May 2021</span>
+</div>
+<p class="entry-body">Honors Concentration; Minor in Mathematics</p>
+</section>
+
+<section>
+<h2 class="section-label">Earlier Experience</h2>
+<div class="entry">
+<div class="entry-header">
+<h3 class="entry-title">Software Engineering Intern, Electrified Aircraft Propulsion <span class="entry-org">— NASA Glenn Research Center</span></h3>
+<span class="entry-date">Summer 2020</span>
+</div>
+<p class="entry-body">Developed real-time Simulink simulation components for a high-lift motor controller system</p>
+</div>
+<div class="entry">
+<div class="entry-header">
+<h3 class="entry-title">Software Engineering Intern, Backend → Frontend <span class="entry-org">— Clover Network, Inc.</span></h3>
+<span class="entry-date">Summer 2018 – Summer 2019</span>
+</div>
+<p class="entry-body">Built RESTful API endpoints and associated frontend components on a Java/Hibernate/React stack</p>
+</div>
+</section>
+</body>
+</html>

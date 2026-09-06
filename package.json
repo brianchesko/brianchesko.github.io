@@ -16,7 +16,8 @@
         "js": "recursive-copy src/js dist/js",
         "build": "npm run clean && mkdir dist && npm run css && npm run copy && npm run img && npm run js",
         "watch-css": "sass src/scss/main.scss dist/css/main.css --watch",
-        "serve": "serve dist"
+        "serve": "serve dist",
+        "compile-resume": "python3 -m weasyprint src/resume/resume.html src/copy/brian_chesko_complete_resume.pdf"
     },
     "devDependencies": {
         "recursive-fs": "^2.1.0",
