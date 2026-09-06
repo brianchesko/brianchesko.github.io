@@ -25,7 +25,7 @@ npm run serve     # preview dist/ at http://localhost:3000
 
 ## Deploying
 
-Every push to `dev` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
+Every push to `main` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
 which builds the site and publishes `dist/` to GitHub Pages directly —
 no separate branch, no manual step. The custom domain is set via
 `src/copy/CNAME`, which is just a normal file in the build output.
