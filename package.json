@@ -1,11 +1,11 @@
 {
     "name": "personal-site",
     "version": "0.1.0",
-    "homepage": "https://brianchesko.github.io",
+    "homepage": "https://brianchesko.dev",
     "description": "Personal site — single-page resume.",
     "author": {
         "name": "Brian Chesko",
-        "url": "https://brianchesko.github.io"
+        "url": "https://brianchesko.dev"
     },
     "license": "MIT",
     "scripts": {
@@ -16,9 +16,7 @@
         "js": "recursive-copy src/js dist/js",
         "build": "npm run clean && mkdir dist && npm run css && npm run copy && npm run img && npm run js",
         "watch-css": "sass src/scss/main.scss dist/css/main.css --watch",
-        "serve": "serve dist",
-        "deploy-current": "./deploy.sh",
-        "deploy": "npm run build && npm run deploy-current"
+        "serve": "serve dist"
     },
     "devDependencies": {
         "recursive-fs": "^2.1.0",

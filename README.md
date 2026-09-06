@@ -25,10 +25,7 @@ npm run serve     # preview dist/ at http://localhost:3000
 
 ## Deploying
 
-GitHub Pages serves the `master` branch, which contains only the built
-`dist/` output — it has no shared history with `dev` and gets force-pushed
-fresh on every deploy (see `deploy.sh`). `dev` is where the source lives.
-
-```bash
-npm run deploy   # build, then force-push dist/ to master
-```
+Every push to `dev` triggers [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
+which builds the site and publishes `dist/` to GitHub Pages directly —
+no separate branch, no manual step. The custom domain is set via
+`src/copy/CNAME`, which is just a normal file in the build output.
