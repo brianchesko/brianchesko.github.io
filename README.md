@@ -22,7 +22,7 @@ npm install         # one-time
 npm run build       # compile scss + copy everything into dist/
 npm run watch-css   # recompile CSS on save
 npm run serve       # preview dist/ at http://localhost:3000
-npm run compile-resume # render src/resume/resume.html to the resume PDF (requires `pip install -r requirements.txt`)
+npm run compile-resume # render src/resume/resume.html to the resume PDF (requires `uv`: https://docs.astral.sh/uv/)
 ```
 
 ## Deploying
