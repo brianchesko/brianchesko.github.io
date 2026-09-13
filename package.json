@@ -11,7 +11,7 @@
     "scripts": {
         "clean": "recursive-delete dist",
         "css": "sass src/scss/main.scss dist/css/main.css",
-        "compile-resume": "uvx --from weasyprint==69.0 weasyprint src/resume/resume.html src/copy/brian_chesko_complete_resume.pdf",
+        "compile-resume": "DYLD_LIBRARY_PATH=\"$(command -v brew >/dev/null 2>&1 && brew --prefix)/lib\" uvx --from weasyprint==69.0 python3 -m weasyprint src/resume/resume.html dist/brian_chesko_complete_resume.pdf",
         "copy": "recursive-copy src/copy dist",
         "img": "recursive-copy src/img dist/img",
         "js": "recursive-copy src/js dist/js",
